@@ -129,6 +129,7 @@ body {
   border-radius: 100px;
   display: flex;
   align-items: center;
+  transition: all 0.3s ease;
 }
 
 .tab {
@@ -141,6 +142,16 @@ body {
   cursor: pointer;
   display: flex;
   align-items: center;
+  transition: all 0.3s ease;
+}
+
+.tab:hover {
+  background-color: #606060;
+  transform: translateY(-2px);
+}
+
+.resume-content {
+  display: none;
 }
 
 .works-grid {
@@ -189,21 +200,20 @@ body {
   }
 }
 
-/* Glow effect */
+/* Glow effect - updated to match helloshivam.com style */
 .glow-effect {
   position: fixed;
-  width: 150px;
-  height: 150px;
+  width: 400px;
+  height: 400px;
   border-radius: 50%;
   background: radial-gradient(circle, 
-    rgba(255,107,107,0.8) 0%, 
-    rgba(102,136,255,0.6) 30%, 
-    rgba(98,252,131,0.4) 70%, 
-    rgba(255,209,102,0.2) 100%);
-  filter: blur(15px);
+    rgba(98,252,131,0.4) 0%, 
+    rgba(102,136,255,0.5) 50%, 
+    rgba(255,107,107,0.6) 100%);
+  filter: blur(60px);
   pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.2s ease;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
   transform: translate(-50%, -50%);
   mix-blend-mode: screen;
   z-index: 9;
@@ -211,17 +221,17 @@ body {
 
 .trail {
   position: fixed;
-  width: 80px;
-  height: 80px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   background: radial-gradient(circle, 
-    rgba(255,107,107,0.7) 0%, 
-    rgba(102,136,255,0.5) 50%, 
-    rgba(98,252,131,0.3) 100%);
-  filter: blur(10px);
+    rgba(98,252,131,0.3) 0%, 
+    rgba(102,136,255,0.4) 50%, 
+    rgba(255,107,107,0.5) 100%);
+  filter: blur(40px);
   pointer-events: none;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.6s ease;
   transform: translate(-50%, -50%);
   mix-blend-mode: screen;
   z-index: 8;

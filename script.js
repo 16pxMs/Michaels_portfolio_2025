@@ -28,12 +28,15 @@ document.addEventListener('DOMContentLoaded', function() {
     selectedWorks.style.transform = 'translateX(0)';
   }, 1000); // Start after introduction animation has begun
 
-  // Add click event for tabs
+  // Add click event for tabs - Updated for toggle functionality
   const tabs = document.querySelectorAll('.tab');
-  const activeTab = document.querySelector('.tab-active');
+  const worksContent = document.querySelector('.works-grid');
+  const resumeContent = document.querySelector('.resume-content');
   
   tabs.forEach(tab => {
     tab.addEventListener('click', function() {
+      const tabType = this.getAttribute('data-tab');
+      
       // Remove active class from currently active tab
       document.querySelector('.tab-active').classList.remove('tab-active');
       document.querySelector('.tab-active').classList.add('tab');
@@ -42,11 +45,20 @@ document.addEventListener('DOMContentLoaded', function() {
       this.classList.remove('tab');
       this.classList.add('tab-active');
       
-      console.log('Tab clicked:', tab.innerText);
+      // Toggle content visibility based on tab
+      if (tabType === 'works') {
+        worksContent.style.display = 'grid';
+        resumeContent.style.display = 'none';
+      } else if (tabType === 'resume') {
+        worksContent.style.display = 'none';
+        resumeContent.style.display = 'block';
+      }
+      
+      console.log('Tab clicked:', this.innerText);
     });
   });
 
-  // Mouse glow effect
+  // Mouse glow effect - Enhanced version similar to helloshivam.com
   const mainContainer = document.querySelector('.main-container');
   const glowEffect = document.createElement('div');
   glowEffect.classList.add('glow-effect');
@@ -54,13 +66,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Trail elements array
   const trailElements = [];
-  const trailCount = 5; // Number of trail elements
+  const trailCount = 3; // Fewer trail elements for a cleaner look
   
   // Create trail elements
   for (let i = 0; i < trailCount; i++) {
     const trail = document.createElement('div');
     trail.classList.add('trail');
-    trail.style.opacity = 1 - (i * 0.2); // Decrease opacity for each trail element
+    trail.style.opacity = 0.6 - (i * 0.2); // Decrease opacity for each trail element
     trail.style.transform = 'scale(' + (1 - (i * 0.15)) + ')'; // Decrease size for each trail element
     mainContainer.appendChild(trail);
     trailElements.push({
@@ -70,12 +82,21 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Mouse move handler
+  // Mouse move handler with improved detection for middle content
   document.addEventListener('mousemove', (e) => {
     const mouseX = e.clientX;
     const mouseY = e.clientY;
     
-    // Check if mouse is over any text
+    // Get viewport dimensions
+    const viewportWidth = window.innerWidth;
+    const viewportCenter = viewportWidth / 2;
+    const centerMargin = viewportWidth * 0.25; // 25% margin from center
+    
+    // Check if mouse is in the middle section of the page
+    const isMiddleSection = mouseX > (viewportCenter - centerMargin) && 
+                          mouseX < (viewportCenter + centerMargin);
+    
+    // Check if mouse is over any text or important element
     const elements = document.elementsFromPoint(mouseX, mouseY);
     const isOverText = elements.some(el => {
       // Check if element is text or contains important text
@@ -83,14 +104,21 @@ document.addEventListener('DOMContentLoaded', function() {
              el.classList.contains('work-id') || 
              el.classList.contains('work-title') ||
              el.classList.contains('tab') ||
-             el.classList.contains('tab-active');
+             el.classList.contains('tab-active') ||
+             el.id === 'introduction' ||
+             el.classList.contains('introduction') ||
+             el.classList.contains('content');
     });
     
-    // Update main glow position
-    if (!isOverText) {
+    // Update main glow position - hide in middle section or over text
+    if (!isOverText && !isMiddleSection) {
       glowEffect.style.left = `${mouseX}px`;
       glowEffect.style.top = `${mouseY}px`;
-      glowEffect.style.opacity = '1';
+      glowEffect.style.opacity = '0.7';
+      
+      // Add subtle movement to make it more dynamic
+      const randomOffsetX = (Math.random() - 0.5) * 10;
+      const randomOffsetY = (Math.random() - 0.5) * 10;
       
       // Update trail positions with delay
       setTimeout(() => {
@@ -100,21 +128,21 @@ document.addEventListener('DOMContentLoaded', function() {
           trailElements[i].y = trailElements[i-1].y;
         }
         
-        // Update first trail to current mouse position
-        trailElements[0].x = mouseX;
-        trailElements[0].y = mouseY;
+        // Update first trail to current mouse position with slight random offset
+        trailElements[0].x = mouseX + randomOffsetX;
+        trailElements[0].y = mouseY + randomOffsetY;
         
         // Apply positions to elements
         trailElements.forEach((trail, index) => {
           if (trail.x && trail.y) {
             trail.element.style.left = `${trail.x}px`;
             trail.element.style.top = `${trail.y}px`;
-            trail.element.style.opacity = isOverText ? '0' : (0.8 - (index * 0.15));
+            trail.element.style.opacity = (isOverText || isMiddleSection) ? '0' : (0.6 - (index * 0.2));
           }
         });
-      }, 50); // Small delay for trailing effect
+      }, 60); // Slightly longer delay for smoother effect
     } else {
-      // Hide glow and trails when over text
+      // Hide glow and trails when over text or in middle section
       glowEffect.style.opacity = '0';
       trailElements.forEach(trail => {
         trail.element.style.opacity = '0';
