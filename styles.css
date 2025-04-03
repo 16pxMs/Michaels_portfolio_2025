@@ -101,11 +101,11 @@ body {
 
 /* Selected works */
 .selected-works {
-  max-width: 596px;
+  max-width: 728px;
   display: flex;
   flex-direction: column;
   gap: 32px;
-  margin-left: 0;
+  margin-left: auto;
   margin-right: auto;
   opacity: 0;
   transform: translateX(-30px);
@@ -187,6 +187,44 @@ body {
     opacity: 1;
     transform: translateX(0) translateY(0);
   }
+}
+
+/* Glow effect */
+.glow-effect {
+  position: fixed;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: radial-gradient(circle, 
+    rgba(255,107,107,0.8) 0%, 
+    rgba(102,136,255,0.6) 30%, 
+    rgba(98,252,131,0.4) 70%, 
+    rgba(255,209,102,0.2) 100%);
+  filter: blur(15px);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: screen;
+  z-index: 9;
+}
+
+.trail {
+  position: fixed;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: radial-gradient(circle, 
+    rgba(255,107,107,0.7) 0%, 
+    rgba(102,136,255,0.5) 50%, 
+    rgba(98,252,131,0.3) 100%);
+  filter: blur(10px);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: screen;
+  z-index: 8;
 }
 
 /* Media queries */
