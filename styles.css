@@ -56,20 +56,14 @@ body {
   margin-bottom: 48px;
   margin-left: auto;
   margin-right: auto;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 1s ease-out forwards;
+  visibility: hidden;
 }
 
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.introduction span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateX(-20px);
+  animation-fill-mode: forwards;
 }
 
 /* Text colors */
@@ -111,8 +105,11 @@ body {
   display: flex;
   flex-direction: column;
   gap: 32px;
-  margin-left: auto;
+  margin-left: 0;
   margin-right: auto;
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .tabs {
@@ -128,8 +125,10 @@ body {
   font-weight: bold;
   height: 32px;
   background-color: #B0B0B0;
-  padding: 8px 12px;
+  padding: 4px 12px;
   border-radius: 100px;
+  display: flex;
+  align-items: center;
 }
 
 .tab {
@@ -137,9 +136,11 @@ body {
   font-size: 16px;
   height: 32px;
   background-color: #494949;
-  padding: 8px 16px;
+  padding: 4px 16px;
   border-radius: 100px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 .works-grid {
@@ -169,6 +170,23 @@ body {
 
 .social-icon {
   height: 55px;
+  transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Animation classes */
+@keyframes textAppear {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px) translateY(random(10) + px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+  }
 }
 
 /* Media queries */
