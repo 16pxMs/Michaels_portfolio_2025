@@ -1,13 +1,18 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { BackgroundImages } from "@/components/home/BackgroundImages";
+import { Introduction } from "@/components/home/Introduction";
+import { SelectedWorks } from "@/components/home/SelectedWorks";
+import { SocialLinks } from "@/components/home/SocialLinks";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
+    <main className="w-full min-h-[screen] bg-[#383838] relative overflow-hidden">
+      <BackgroundImages />
+      <div className="max-w-[1440px] relative z-10 mx-auto px-6 py-16">
+        <Introduction />
+        <SelectedWorks />
+        <SocialLinks />
       </div>
-    </div>
+    </main>
   );
 };
 
