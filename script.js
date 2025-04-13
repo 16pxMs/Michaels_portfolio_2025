@@ -1,6 +1,60 @@
 
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
+
+
+  // let readMoreButton = document.querySelector('.read-more-btn')
+
+  // readMoreButton.addEventListener('click', function() {
+  //   const content = this.nextElementSibling;
+  //   content.classList.toggle('show');
+
+  //   if (!this.classList.contains('moved')) {
+  //     content.appendChild(this); // Move the button to the bottom of the content
+  //     this.classList.add('moved')
+
+  //   }
+
+  //   if (content.classList.contains('show')) {
+  //     this.textContent = ("Read less")
+  //   } 
+  //   else {
+  //     this.textContent = ("😊 Keep reading")
+  //   }
+
+
+  // }
+  // )
+
+let readMoreButton = document.querySelector('.read-more-btn');
+let content = document.querySelector('.read-more-content');
+let originalButtonParent = readMoreButton.parentElement;
+let buttonMoved = false;
+
+readMoreButton.addEventListener('click', function() {
+
+  content.classList.toggle('show');
+  
+  
+  if (!buttonMoved) {
+    content.appendChild(readMoreButton);
+    buttonMoved = true;
+  }
+  
+  
+  if (content.classList.contains('show')) {
+    readMoreButton.textContent = "🙈 Show less";
+  } else {
+    readMoreButton.textContent = "😊 Keep reading";
+    
+
+    if (buttonMoved) {
+      originalButtonParent.appendChild(readMoreButton);
+      content.after(readMoreButton);
+    }
+  }
+})
+
   // Get introduction element and make it visible
   const introduction = document.getElementById('introduction');
   introduction.style.visibility = 'visible';

@@ -19,28 +19,7 @@ body {
   line-height: 1.5;
 }
 
-nav {
-  margin: 0 0 3em 0;
-}
-
-
-.h1Copy {
-  font-size: 2em;
-  line-height: 120%;
-  /* font-style: italic; */
-  font-weight: 100;
-  color: hsl(0, 0%, 100%);
-  margin: 0 0 2em 0;
-}
-
-p {
-    font-size: 1.125em;
-    font-weight: 400;
-}
-
-
-
- /* Main container */
+/* Main container */
 .main-container {
   width: 100%;
   min-height: 100vh;
@@ -49,7 +28,7 @@ p {
   overflow: hidden;
 }
 
-/* Background images */
+/* Background images
 
 .background-images {
   display: flex;
@@ -67,68 +46,114 @@ p {
   flex-shrink: 0;
   aspect-ratio: 1/1;
   mix-blend-mode: luminosity;
-}
-
-
- 
-/* Page map grid  */
-/* .page-grid {
-  display: grid;
-  grid-template-columns: [start] minmax(0, 1fr) [content-start] minmax(auto, 1200px) [content-end] minmax(0, 1fr) [end];
-  min-height: 100vh;
-}
-
-.page-grid > * {
-  grid-column: content-start / content-end;
 } */
 
 
-/* new code line */
 
-.intro-line {
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-  font-weight: bold;
+nav {
+  margin: 0 0 3em 0;
 }
 
-.bio-text {
-  line-height: 1.6;
-  display: inline;
-  white-space: normal;
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
-
-/* Ensure spans don't break the flow */
-
-.bio-text span {
-  display: inline;
-  white-space: normal;
-}
-
 
 /* Introduction */
 
 .introduction {
-  max-width: 728px;
-  font-size: 18px;
-  line-height: 27px;
+  max-width: 680px;
+  width: 100%;
+  font-size: 16px;
+  line-height: 150%;
   visibility: hidden;
   margin: 0 0 2em 0;
-}
-
-.introduction p {
-  margin-bottom: 0.2em;
-  display: block;
 }
 
 .introduction span {
   display: inline-block;
   opacity: 0;
   transform: translateX(-20px);
-  animation-fill-mode: forwards;
+  animation-fill-mode:backwards;
+}
+
+
+.h1Copy {
+  font-size: 2em;
+  line-height: 120%;
+  font-weight: 100;
+  color: hsl(0, 0%, 100%);
+  max-width: 680px;
+}
+
+p {
+  font-size: 1em;
+  font-weight: 300;
+  max-width: 580px;
+}
+
+ul {
+  margin: 0;
+  padding-left: 1em;
+}
+
+li {
+  color: hsl(0, 0%, 100%);
+  font-style: italic;
+  font-size: 1em;
+  font-weight: 300;
+  max-width: 550px;
+  padding: 0;
+}
+
+
+.link a {
+  color: hsl(0, 0%, 100%);
+  text-decoration: none;
+  border-bottom: 2px solid hsl(0, 0%, 100%);
+  padding-bottom: 2px;
+  transition: border-color 0.2s ease;
+}
+
+.link a:hover {
+  border-bottom-color: hsl(200, 100%, 70%);
 }
 
 
 
+
+/* read more button */
+
+.read-more-btn {
+  border: none;
+  border-radius: 24px;
+  background-color: hsl(35, 96%, 35%);
+  color:hsl(0, 0%, 100%);
+  font-family: inherit;
+  padding: 0.5em 1em;
+  margin: 2em 0;
+}
+
+.read-more-btn:hover {
+  background-color: hsl(0, 0%, 75%);
+  color: hsl(0, 0%, 29%)
+}
+
+
+
+/* read more content */
+
+.read-more-content {
+  display: none;
+}
+
+.read-more-content.show {
+  display: block;
+}
+
+ 
 /* Text colors */
  
 .greeting, 
@@ -140,8 +165,9 @@ p {
 }
 
 
-.text-red {
+.text{
   color: #FF6B6B;
+  font-weight: 600;
 }
 
 .text-green {
@@ -164,10 +190,31 @@ p {
   color: #66FF99;
 } 
 
+/* Social links */
+
+.social-links {
+  display: flex;
+  gap: 1em;
+  margin: 0 0 2em 0;
+}
+
+.social-icon {
+  transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+} 
+
+/* buttom section of hero page */
+
+.buttomSectionWrapper{
+  max-width: 680px;
+  width: 50%;
+}
+
 /* Segment control section */
-
-
-.segment_Control {
+.segmentControl {
   margin: 0 0 2em 0;
 }
 
@@ -216,10 +263,6 @@ label span {
   cursor: pointer; 
 }
 
-label span {
-  background-color: transparent;
-  color: black;
-}
 
 
 input[type="radio"]:checked + span {
@@ -245,12 +288,10 @@ label:hover input[type="radio"]:not(:checked) + span {
   opacity: 0.9;
 }
 
-
-
-.works-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 29px;
+.works {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
 }
 
 .work-item {
@@ -264,21 +305,6 @@ label:hover input[type="radio"]:not(:checked) + span {
   color: white;
 }
 
-/* Social links */
-
-.social-links {
-  display: flex;
-  gap: 1em;
-  margin: 0 0 6em 0;
-}
-
-.social-icon {
-  transition: transform 0.3s ease;
-}
-
-.social-icon:hover {
-  transform: scale(1.1);
-} 
 
 
 
@@ -309,7 +335,7 @@ label:hover input[type="radio"]:not(:checked) + span {
     font-size: 14px;
   }
   
-  .works-grid {
+  /* .works-grid {
     grid-template-columns: 1fr;
-  }
+  } */
 }
