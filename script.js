@@ -2,34 +2,35 @@
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
 
-
-  // let readMoreButton = document.querySelector('.read-more-btn')
-
-  // readMoreButton.addEventListener('click', function() {
-  //   const content = this.nextElementSibling;
-  //   content.classList.toggle('show');
-
-  //   if (!this.classList.contains('moved')) {
-  //     content.appendChild(this); // Move the button to the bottom of the content
-  //     this.classList.add('moved')
-
-  //   }
-
-  //   if (content.classList.contains('show')) {
-  //     this.textContent = ("Read less")
-  //   } 
-  //   else {
-  //     this.textContent = ("😊 Keep reading")
-  //   }
-
-
-  // }
-  // )
-
 let readMoreButton = document.querySelector('.read-more-btn');
 let content = document.querySelector('.read-more-content');
 let originalButtonParent = readMoreButton.parentElement;
 let buttonMoved = false;
+const container = document.getElementById('works')
+
+const projectList = [
+  { id: "001", 
+    title: "Project1",
+    file:"project1.html"
+  },
+
+  { id: "002", 
+    title: "",
+    file:""
+  },
+  
+  { id: "003", 
+    title: "",
+    file:"",
+  },
+
+  { id: "004", 
+    title: "",
+    file:"",
+  }
+      
+]
+
 
 readMoreButton.addEventListener('click', function() {
 
@@ -54,6 +55,33 @@ readMoreButton.addEventListener('click', function() {
     }
   }
 })
+
+// create project and render in html
+
+projectList.forEach(project => {
+
+  // create a link
+  const link = document.createElement('a')
+  link.href = project.file
+  link.target = "_blank"
+
+  const idSpan = document.createElement('span')
+  idSpan.className = "projectId"
+  idSpan.textContent = project.id
+
+  const titleSpan = document.createElement('span')
+  titleSpan.className = "projectTitle"
+  titleSpan.textContent = project.title
+
+  link.appendChild(idSpan)
+  link.appendChild(titleSpan)
+
+  
+  // link.innerHTML = `<span>${project.id}</span> ${project.title}`
+  container.append(link)
+  link.className = "projectLink"
+})
+
 
   // Get introduction element and make it visible
   const introduction = document.getElementById('introduction');
@@ -111,6 +139,8 @@ readMoreButton.addEventListener('click', function() {
       console.log('Tab clicked:', this.innerText);
     });
   });
+
+
 
   
   

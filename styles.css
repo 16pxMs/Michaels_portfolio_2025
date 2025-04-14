@@ -54,6 +54,11 @@ nav {
   margin: 0 0 3em 0;
 }
 
+
+.Mslogo {
+  list-style-type`: none;
+}
+
 .content {
   display: flex;
   flex-direction: column;
@@ -118,7 +123,8 @@ li {
 }
 
 .link a:hover {
-  border-bottom-color: hsl(200, 100%, 70%);
+  color: hsl(243, 99%, 65%);
+  border-bottom-color: hsl(243, 99%, 65%);
 }
 
 
@@ -129,7 +135,7 @@ li {
 .read-more-btn {
   border: none;
   border-radius: 24px;
-  background-color: hsl(35, 96%, 35%);
+  background-color: #FF6B6B;
   color:hsl(0, 0%, 100%);
   font-family: inherit;
   padding: 0.5em 1em;
@@ -166,7 +172,7 @@ li {
 
 
 .text{
-  color: #FF6B6B;
+  color: hsl(337, 72%, 59%);
   font-weight: 600;
 }
 
@@ -186,8 +192,8 @@ li {
   color: #FF9F1C;
 }
 
-.text-light-green {
-  color: #66FF99;
+.metrics {
+  color: hsl(180, 94%, 40%);
 } 
 
 /* Social links */
@@ -261,6 +267,9 @@ label span {
   overflow: hidden; /* Ensures rounded corners look clean */
   text-align: center;
   cursor: pointer; 
+  white-space: nowrap;  
+  padding: 0 1em;
+  /* height: auto;   */
 }
 
 
@@ -288,26 +297,52 @@ label:hover input[type="radio"]:not(:checked) + span {
   opacity: 0.9;
 }
 
-.works {
+#works {
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: 1.5em;
+  cursor: pointer;
+  padding: 0 1em;
 }
 
 .work-item {
   display: flex;
-  align-items: center;
-  gap: 16px;
 }
 
-.work-id, .work-title {
-  font-size: 16px;
-  color: white;
+.projectLink {
+  display: flex;
+  gap: 2em;
+  text-decoration: none;
+  color: hsl(0, 0%, 100%);
+}
+
+.projectLink:hover {
+  border-bottom: solid 3px hsl(0, 0%, 100%);
+}
+
+.projectLink::after {
+  content: '';
+  position: absolute;
+  background-image: url('/Images/Substack\ iOS\ 33.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 20px; /* Adjust size as needed */
+  height: 20px; /* Adjust size as needed */
+  right: -30px; /* Position it to the right of your link */
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.3s ease;
+}
+
+.projectLink:hover::after {
+  opacity: 1;
 }
 
 
-
-
+.footer {
+  margin: 3em 0 0 0;
+}
 
 
 /* Animation classes */
@@ -335,7 +370,5 @@ label:hover input[type="radio"]:not(:checked) + span {
     font-size: 14px;
   }
   
-  /* .works-grid {
-    grid-template-columns: 1fr;
-  } */
+  
 }

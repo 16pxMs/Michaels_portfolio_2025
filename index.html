@@ -7,7 +7,16 @@
     <title>Michael Shumaker Portfolio</title>
     <meta name="description" content="Michael's Portfolio Website" />
     <meta name="author" content="Michael" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/Favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/Favicons/favicon-32x32.png
+    ">
+    <link rel="icon" type="image/png" sizes="16x16" href="/Favicons/favicon-16x16.png">
+
+    <link rel="manifest" href="/site.webmanifest">
+
     <link rel="stylesheet" href="styles.css" />
+
   </head>
 
   <body>
@@ -25,7 +34,15 @@
         />
       </div> -->
       <nav> 
+        <ul>
+          <li class="Mslogo">
+            <img src="/Images/MS_Logo.svg" alt="Logo" />
+          </li>
 
+          <div class="workStatus">
+            <p>open to work </p>
+          </div>
+        </ul>
 
       </nav>
 
@@ -42,13 +59,13 @@
           </p>
 
           <ul class="achievement-list">
-            <li class="first-li-item">Helped cut chargebacks by <span class="text-orange">90%.</span> 
+            <li class="first-li-item">Helped cut chargebacks by <span class="metrics">90%.</span> 
             </li>
 
-            <li class="first-li-item">Optimized inner-screen UX for KYC and deposits, increasing conversion rates by  <span class="text-orange">30%.</span> 
+            <li class="first-li-item">Optimized inner-screen UX for KYC and deposits, increasing conversion rates by  <span class="metrics">30%.</span> 
             </li>
 
-            <li> Oversaw the design strategy for Google Play screenshots, increasing conversion rates by <span class="text-orange">107% (from 8.2% to 17%).</span>
+            <li> Oversaw the design strategy for Google Play screenshots, increasing conversion rates by <span class="metrics">107% (from 8.2% to 17%).</span>
             </li>
           </ul>
 
@@ -62,13 +79,13 @@
           <div class="read-more-content "> 
 
             <ul>
-              <li>Built a <span class="text-orange">design system</span> that keeps everything sharp and scalable.boosting development efficiency by
-              <span class="text-orange">20%.</span> </li> 
+              <li>Built a <span class="metrics">design system</span> that keeps everything sharp and scalable.boosting development efficiency by
+              <span class="metrics">20%.</span> </li> 
             </ul>
 
             <p class="bio">For nearly a decade, I’ve turned complex challenges into simple, smooth, impactful solutions across fintech, SaaS, entertainment, and beyond.</p>
 
-            <p class="skills">I’m expanding my toolkit with <span class="text-red">JavaScript</span>, <span class="text-blue">CSS animations</span>, <span class="text-light-green">Python</span>, and <span class="text-orange">AI</span>, bridging the gap between design and code to bring ideas to life with more precision and speed.</p>
+            <p class="skills">I’m expanding my toolkit with <span class="text-red">JavaScript</span>, <span class="text-blue">CSS animations</span>, <span class="text-light-green">Python</span>, and <span class="metrics">AI</span>, bridging the gap between design and code to bring ideas to life with more precision and speed.</p>
           
           </div>
 
@@ -82,7 +99,7 @@
 
             <a href="mailto:mshumaker.ms@gmail.com"
               target="_blank" rel="noopener noreferrer">
-              <img class="social-icon" src="/Icons/Email_Icon.svg`" alt="Email icon button" />
+              <img class="social-icon" src="/Icons/Email_Icon.svg" alt="Email icon button" />
               
             </a>
   
@@ -113,23 +130,10 @@
 
           <!-- projects -->
 
-          <div class="works">
-            <div class="work-item">
-              <span  class="work-id">001</span>
-              <span class="work-title">Project title</span>
+          <div id="works">
+            <div class="work-item" id="project-list"></div>
             </div>
-            <div class="work-item">
-              <span  class="work-id">002</span>
-              <span class="work-title">Project title</span>
-            </div>
-            <div class="work-item">
-              <span  class="work-id">003</span>
-              <span class="work-title">Project title</span>
-            </div>
-            <div class="work-item">
-              <span  class="work-id">004</span>
-              <span class="work-title">Project title</span>
-            </div>
+           
           </div>
 
 
@@ -140,8 +144,9 @@
         
       </section>
         
-      
-          
+    <footer class="footer">
+
+    </footer>
         
 
     </main>
