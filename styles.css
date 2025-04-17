@@ -26,6 +26,8 @@ body {
   background-color: #383838;
   position: relative;
   overflow: hidden;
+  padding-top: 80px;
+  z-index: 1;
 }
 
 /* Background images
@@ -48,16 +50,68 @@ body {
   mix-blend-mode: luminosity;
 } */
 
-
-
+/* Top navigation */
+ 
 nav {
+  width: 100%;
+  height: 60px;
   margin: 0 0 3em 0;
+  padding: 0 2em;
+  position: fixed;
+  top: 0;`
+  left: 0;
+  z-index: 1000;
+  background-color: rgba(56, 56, 56, 0.243); 
+  backdrop-filter: blur(5px); 
+  transition: all 0.3s ease; 
 }
 
+.navContainer {
+display: flex;
+justify-content: space-between;
+width: 100%;
+padding: 0;
+margin: 0;
+}
 
 .Mslogo {
-  list-style-type`: none;
+  list-style-type: none;
 }
+
+.statusContainer {
+  color: hsl(0, 0%, 100%);
+  background-color: #97959577;
+  padding: 0.4em 1em;
+  font-size: 0.875em;
+  border-radius: 4px;
+}
+
+.workStatus {
+  display: flex;
+  align-items: center;
+  gap: 1.5em;
+}
+
+/* Social links */
+
+.social-links {
+  display: flex;
+  gap: 1em;
+  height: 32px;
+}
+
+.social-icon {
+  transition: transform 0.3s ease;
+  width: 32px;  /* Set a consistent width */
+  height: 32px; /* Set a consistent height */
+  display: block;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+} 
+
+
 
 .content {
   display: flex;
@@ -90,13 +144,15 @@ nav {
   line-height: 120%;
   font-weight: 100;
   color: hsl(0, 0%, 100%);
-  max-width: 680px;
+  /* max-width: 680px; */
+  max-width: 70%;
 }
 
 p {
   font-size: 1em;
   font-weight: 300;
-  max-width: 580px;
+  max-width: 80%;
+  color: hsl(0, 0%, 100%);
 }
 
 ul {
@@ -107,9 +163,9 @@ ul {
 li {
   color: hsl(0, 0%, 100%);
   font-style: italic;
-  font-size: 1em;
+  font-size: 0.875em;
   font-weight: 300;
-  max-width: 550px;
+  max-width: 75%;
   padding: 0;
 }
 
@@ -119,7 +175,6 @@ li {
   text-decoration: none;
   border-bottom: 2px solid hsl(0, 0%, 100%);
   padding-bottom: 2px;
-  transition: border-color 0.2s ease;
 }
 
 .link a:hover {
@@ -140,6 +195,7 @@ li {
   font-family: inherit;
   padding: 0.5em 1em;
   margin: 2em 0;
+  transition: all 0.3s ease;
 }
 
 .read-more-btn:hover {
@@ -176,41 +232,11 @@ li {
   font-weight: 600;
 }
 
-.text-green {
-  color: #62FC83;
-}
-
-.text-blue {
-  color: #6688FF;
-}
-
-.text-yellow {
-  color: #FFD166;
-}
-
-.text-orange {
-  color: #FF9F1C;
-}
 
 .metrics {
   color: hsl(180, 94%, 40%);
 } 
 
-/* Social links */
-
-.social-links {
-  display: flex;
-  gap: 1em;
-  margin: 0 0 2em 0;
-}
-
-.social-icon {
-  transition: transform 0.3s ease;
-}
-
-.social-icon:hover {
-  transform: scale(1.1);
-} 
 
 /* buttom section of hero page */
 
@@ -220,10 +246,6 @@ li {
 }
 
 /* Segment control section */
-.segmentControl {
-  margin: 0 0 2em 0;
-}
-
 
 fieldset {
   border: none;
@@ -256,6 +278,7 @@ label {
   user-select: none;
   display: flex; 
   position: relative; 
+  
 }
 
 label span {
@@ -264,12 +287,11 @@ label span {
   align-items: center; 
   width: 100%; 
   height: 2em;
-  overflow: hidden; /* Ensures rounded corners look clean */
+  overflow: hidden; 
   text-align: center;
   cursor: pointer; 
   white-space: nowrap;  
   padding: 0 1em;
-  /* height: auto;   */
 }
 
 
@@ -283,6 +305,7 @@ input[type="radio"]:checked + span {
 }
 
 /* Disabled state - applied to all non-checked labels */
+
 input[type="radio"]:not(:checked) + span {
   background-color: hsl(0, 0%, 29%);
   border-radius: 16px;
@@ -291,6 +314,7 @@ input[type="radio"]:not(:checked) + span {
 }
 
 /* Hover state  only for non-disabled labels */
+
 label:hover input[type="radio"]:not(:checked) + span {
   background-color: hsl(0, 0%, 65%);
   color: hsl(0, 0%, 100%);
@@ -300,7 +324,7 @@ label:hover input[type="radio"]:not(:checked) + span {
 #works {
   display: flex;
   flex-direction: column;
-  gap: 1.5em;
+  gap: 2em;
   cursor: pointer;
   padding: 0 1em;
 }
@@ -314,34 +338,58 @@ label:hover input[type="radio"]:not(:checked) + span {
   gap: 2em;
   text-decoration: none;
   color: hsl(0, 0%, 100%);
+  border-bottom: solid 3px transparent;
+  transition: transform 0.3 ease, border-bottom-color 0.3s ease;
 }
 
 .projectLink:hover {
   border-bottom: solid 3px hsl(0, 0%, 100%);
+  transform: translateY(-2px);
 }
 
-.projectLink::after {
+/* .projectLink::after {
   content: '';
   position: absolute;
   background-image: url('/Images/Substack\ iOS\ 33.png');
   background-size: contain;
   background-repeat: no-repeat;
-  width: 20px; /* Adjust size as needed */
-  height: 20px; /* Adjust size as needed */
-  right: -30px; /* Position it to the right of your link */
+  width: 20px; 
+  height: 20px; 
+  right: -30px; 
   top: 50%;
   transform: translateY(-50%);
-  opacity: 0; /* Hidden by default */
+  opacity: 0; 
   transition: opacity 0.3s ease;
-}
+} */
 
 .projectLink:hover::after {
   opacity: 1;
 }
 
 
+/* FOOTER */
+
 .footer {
-  margin: 3em 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 7em 01.5em 0 1.5em;
+  padding: 7em 0 3em 0;
+  border-radius: 16px;
+  background-color: hsl(0, 0%, 24%);
+  
+}
+
+.footerCopyright, .footerBragCopy  {
+  color: hsl(0, 0%, 80%);
+}
+
+.footerCopyright {
+  font-size: small;
+}
+
+.footerBragCopy {
+font-style: italic;
 }
 
 
@@ -369,6 +417,5 @@ label:hover input[type="radio"]:not(:checked) + span {
   .introduction {
     font-size: 14px;
   }
-  
-  
+
 }

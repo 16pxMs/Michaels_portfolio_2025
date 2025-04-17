@@ -2,86 +2,131 @@
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
 
-let readMoreButton = document.querySelector('.read-more-btn');
-let content = document.querySelector('.read-more-content');
-let originalButtonParent = readMoreButton.parentElement;
-let buttonMoved = false;
-const container = document.getElementById('works')
-
-const projectList = [
-  { id: "001", 
-    title: "Project1",
-    file:"project1.html"
-  },
-
-  { id: "002", 
-    title: "",
-    file:""
-  },
+  let readMoreButton = document.querySelector('.read-more-btn');
+  let content = document.querySelector('.read-more-content');
+  let originalButtonParent = readMoreButton.parentElement;
+  let buttonMoved = false;
+  const container = document.getElementById('works')
   
-  { id: "003", 
-    title: "",
-    file:"",
-  },
-
-  { id: "004", 
-    title: "",
-    file:"",
-  }
-      
-]
-
-
-readMoreButton.addEventListener('click', function() {
-
-  content.classList.toggle('show');
+  const projectList = [
+    { id: "001", 
+      title: "Project1",
+      file:"project1.html"
+    },
   
-  
-  if (!buttonMoved) {
-    content.appendChild(readMoreButton);
-    buttonMoved = true;
-  }
-  
-  
-  if (content.classList.contains('show')) {
-    readMoreButton.textContent = "🙈 Show less";
-  } else {
-    readMoreButton.textContent = "😊 Keep reading";
+    { id: "002", 
+      title: "",
+      file:""
+    },
     
-
-    if (buttonMoved) {
-      originalButtonParent.appendChild(readMoreButton);
-      content.after(readMoreButton);
+    { id: "003", 
+      title: "",
+      file:"",
+    },
+  
+    { id: "004", 
+      title: "",
+      file:"",
     }
-  }
-})
+        
+  ]
+  
+  
+  readMoreButton.addEventListener('click', function() {
+  
+    content.classList.toggle('show');
+    
+    
+    if (!buttonMoved) {
+      content.appendChild(readMoreButton);
+      buttonMoved = true;
+    }
+    
+    
+    if (content.classList.contains('show')) {
+      readMoreButton.textContent = "🙈 Show less";
+    } else {
+      readMoreButton.textContent = "😊 Keep reading";
+      
+  
+      if (buttonMoved) {
+        originalButtonParent.appendChild(readMoreButton);
+        content.after(readMoreButton);
+      }
+    }
+  })
+  
+  // create project and render in html
+  
+  projectList.forEach(project => {
+    const link = document.createElement('a')
 
-// create project and render in html
+    // create a link
+    if (project.file) {
+    link.target = "_blank"
+    link.href = project.file
+    
+    } else {
+      link.href = "#"
+    }
+  
+    const idSpan = document.createElement('span')
+    idSpan.className = "projectId"
+    idSpan.textContent = project.id
+  
+    const titleSpan = document.createElement('span')
+    titleSpan.className = "projectTitle"
+    titleSpan.textContent = project.title
+  
+    link.appendChild(idSpan)
+    link.appendChild(titleSpan)
 
-projectList.forEach(project => {
+    container.append(link)
+    link.className = "projectLink"
 
-  // create a link
-  const link = document.createElement('a')
-  link.href = project.file
-  link.target = "_blank"
+    
+  })
+  
 
-  const idSpan = document.createElement('span')
-  idSpan.className = "projectId"
-  idSpan.textContent = project.id
 
-  const titleSpan = document.createElement('span')
-  titleSpan.className = "projectTitle"
-  titleSpan.textContent = project.title
 
-  link.appendChild(idSpan)
-  link.appendChild(titleSpan)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   
-  // link.innerHTML = `<span>${project.id}</span> ${project.title}`
-  container.append(link)
-  link.className = "projectLink"
-})
-
 
   // Get introduction element and make it visible
   const introduction = document.getElementById('introduction');
@@ -103,12 +148,7 @@ projectList.forEach(project => {
     span.style.animationTimingFunction = 'cubic-bezier(0.25, 0.1, 0.25, 1.0)';
   });
   
-  // Animate the selected works section
-  const selectedWorks = document.getElementById('selected-works');
-  setTimeout(() => {
-    selectedWorks.style.opacity = '1';
-    selectedWorks.style.transform = 'translateX(0)';
-  }, 1000); // Start after introduction animation has begun
+  
 
   // Add click event for tabs - Updated for toggle functionality
   const tabs = document.querySelectorAll('.tab');
@@ -141,7 +181,8 @@ projectList.forEach(project => {
   });
 
 
-
+  console.log("DOM fully loaded - Project Page");
+  updateProjectPageFromStorage();
   
   
 });
