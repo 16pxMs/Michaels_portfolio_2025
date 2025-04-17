@@ -1,50 +1,21 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 document.addEventListener('DOMContentLoaded', function() {
     console.log("Project page DOM loaded");
     
-    // Function to update project page content using localStorage
-    function updateProjectPageFromStorage() {
-      console.log("Updating project page from localStorage...");
+    // Function to get URL parameters
+    function getUrlParameter(name) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(name) || '';
+    }
+    
+    // Function to update project page content using URL parameters
+    function updateProjectPageFromUrl() {
+      console.log("Updating project page from URL parameters...");
       
-      // Get project info from localStorage
-      const projectId = localStorage.getItem('currentProjectId');
-      const projectTitle = localStorage.getItem('currentProjectTitle');
+      // Get project info from URL parameters
+      const projectId = getUrlParameter('id');
+      const projectTitle = getUrlParameter('title');
       
-      console.log("Retrieved from storage - ID:", projectId, "Title:", projectTitle);
+      console.log("Retrieved from URL - ID:", projectId, "Title:", projectTitle);
       
       // Get elements to update
       const projectIdElement = document.getElementById('project-id');
@@ -67,9 +38,50 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
     
-    // Navigation elements and other code specific to project pages can go here
-    
     // Call the update function immediately
-    updateProjectPageFromStorage();
-  });
+    updateProjectPageFromUrl();
+});
+``
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

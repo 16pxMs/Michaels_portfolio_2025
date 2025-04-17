@@ -63,10 +63,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // create a link
     if (project.file) {
-    link.target = "_blank"
-    link.href = project.file
-    
-    } else {
+      link.href = `${project.file}?id=${encodeURIComponent(project.id)}&title=${encodeURIComponent(project.title)}`
+      link.target = "_blank"
+      } else {
       link.href = "#"
     }
   
@@ -155,34 +154,6 @@ document.addEventListener('DOMContentLoaded', function() {
   const worksContent = document.querySelector('.works-grid');
   const resumeContent = document.querySelector('.resume-content');
   
-  tabs.forEach(tab => {
-    tab.addEventListener('click', function() {
-      const tabType = this.getAttribute('data-tab');
-      
-      // Remove active class from currently active tab
-      document.querySelector('.tab-active').classList.remove('tab-active');
-      document.querySelector('.tab-active').classList.add('tab');
-      
-      // Add active class to clicked tab
-      this.classList.remove('tab');
-      this.classList.add('tab-active');
-      
-      // Toggle content visibility based on tab
-      if (tabType === 'works') {
-        worksContent.style.display = 'grid';
-        resumeContent.style.display = 'none';
-      } else if (tabType === 'resume') {
-        worksContent.style.display = 'none';
-        resumeContent.style.display = 'block';
-      }
-      
-      console.log('Tab clicked:', this.innerText);
-    });
-  });
 
-
-  console.log("DOM fully loaded - Project Page");
-  updateProjectPageFromStorage();
-  
   
 });
