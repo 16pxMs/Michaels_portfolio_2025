@@ -8,46 +8,72 @@ function setupProjectTransitions() {
     // Add click event to each project link
     projectLinks.forEach(link => {
       link.addEventListener('click', function(e) {
-        // Only handle links that have a file to navigate to
-        if (this.getAttribute('href') !== '#') {
-          e.preventDefault(); // Prevent immediate navigation
-          
-          const targetHref = this.getAttribute('href');
-          const projectId = this.querySelector('.projectId').textContent;
-          const projectTitle = this.querySelector('.projectTitle').textContent;
-          
-          // Create overlay for transition
-          const overlay = document.createElement('div');
-          overlay.className = 'page-transition-overlay';
-          document.body.appendChild(overlay);
-          
-          // Add project info to overlay
-          const projectInfo = document.createElement('div');
-          projectInfo.className = 'project-transition-info';
-          projectInfo.innerHTML = `
-            <span class="transition-project-id">${projectId}</span>
-            <h2 class="transition-project-title">${projectTitle}</h2>
-          `;
-          overlay.appendChild(projectInfo);
-          
-          // Animate overlay
-          setTimeout(() => {
-            overlay.classList.add('active');
-          }, 10);
-          
-          // Navigate to the project page after animation completes
-          setTimeout(() => {
-            window.location.href = targetHref;
-          }, 800);
-        }
-      });
-    });
-  }
+            // Only handle links that have a file to navigate to
+            if (this.getAttribute('href') !== '#') {
+            e.preventDefault(); // Prevent immediate navigation
+            
+            const targetHref = this.getAttribute('href');
+            const projectId = this.querySelector('.projectId').textContent;
+            const projectTitle = this.querySelector('.projectTitle').textContent;
+            
+            // Create overlay for transition
+            const overlay = document.createElement('div');
+            overlay.className = 'page-transition-overlay';
+            document.body.appendChild(overlay);
+            
+            // Add project info to overlay
+            const projectInfo = document.createElement('div');
+            projectInfo.className = 'project-transition-info';
+            projectInfo.innerHTML = `
+                <span class="transition-project-id">${projectId}</span>
+                <h2 class="transition-project-title">${projectTitle}</h2>
+            `;
+            overlay.appendChild(projectInfo);
+            
+            // Animate overlay
+            setTimeout(() => {
+                overlay.classList.add('active');
+            }, 10);
+            
+            // Navigate to the project page after animation completes
+            setTimeout(() => {
+                window.location.href = targetHref;
+            }, 800);
+            }
+        })
+    })
+
+
+}
   
-  // Initialize animations
-  document.addEventListener('DOMContentLoaded', function() {
-    // Only setup transitions on the main page
-    if (document.getElementById('works')) {
-      setupProjectTransitions();
+// Initialize animations
+document.addEventListener('DOMContentLoaded', function() {
+ // Only setup transitions on the main page
+ if (document.getElementById('works')) {
+    setupProjectTransitions();
     }
-  });
+});
+
+
+const bottomNav = document.querySelector('.projectButtomNav');
+const footer = document.querySelector('.footer');
+  
+window.addEventListener('scroll', function() {
+ // Check if scrolled past first viewport height
+ if (window.scrollY > window.innerHeight) {
+     // Check if reached footer
+    const footerPosition = footer.getBoundingClientRect().top;
+    const navHeight = bottomNav.offsetHeight;
+      
+ if (footerPosition > window.innerHeight + navHeight) {
+     bottomNav.classList.add('visible');
+    } else {
+      bottomNav.classList.remove('visible');
+    }
+    } else {
+    bottomNav.classList.remove('visible');
+    }
+
+});
+
+  

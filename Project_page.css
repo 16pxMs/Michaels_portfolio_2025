@@ -26,6 +26,7 @@ main {
   background-color: hsl(0, 0%, 22%);
   position: relative;
   overflow: hidden;
+  padding-bottom: 100px;
   padding-top: 80px;
   z-index: 1;
 }
@@ -47,7 +48,7 @@ p {
 
 
 /* Top navigation */
-
+ 
 nav {
   width: 100%;
   height: 60px;
@@ -67,47 +68,85 @@ nav {
   justify-content: space-between;
   width: 100%;
   padding: 0;
+  margin: 0;
 }
-  
+
 .Mslogo {
   list-style-type: none;
 }
 
-.statusContainer {
-  color: hsl(0, 0%, 100%);
-  background-color: hsla(0, 2%, 59%, 0.47);
-  padding: 0.4em 1em;
-  font-size: 0.875em;
-  border-radius: 4px;
-}
-  
-.workStatus {
+.socials {
   display: flex;
   align-items: center;
   gap: 1.5em;
 }
-  
-  /* Social links */
-  
+
+/* Social links */
+
 .social-links {
-display: flex;
-gap: 1em;
-height: 32px;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  height: 32px;
 }
-  
+
 .social-icon {
   transition: transform 0.3s ease;
-  width: 32px;  /* Set a consistent width */
-  height: 32px; /* Set a consistent height */
+  width: 32px;  
+  height: 32px; 
   display: block;
 }
-  
+
 .social-icon:hover {
   transform: scale(1.1);
 } 
-  
- 
 
+.ring-container {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle {
+  width: 12px;
+  height: 12px;
+  background-color: hsl(93, 77%, 42%);
+  border-radius: 50%;
+  position: absolute;
+  z-index: 2;
+}
+
+
+.ringring {
+  border: 2px solid hsl(93, 77%, 42%);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  animation: pulsate 1.5s ease-out infinite;
+  opacity: 0;
+  z-index: 1;
+}
+
+.workStatusContainer {
+  color: hsl(0, 0%, 100%);
+  background-color: hsla(0, 2%, 59%, 0.47);
+  padding: 0.3em 1em;
+  font-size: 0.875em;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 0.2em;
+  white-space: nowrap;
+}
+
+.workstatusText {
+  margin: 0;
+
+}
   
 
 
@@ -122,7 +161,7 @@ height: 32px;
 
 #project-display {
   padding: 0em;
-  max-width: 600px;
+  max-width: 560px;
 }
   
 #project-id {
@@ -137,6 +176,27 @@ height: 32px;
   font-size: 2.5rem;
   font-weight: 800;
   color: #dedede;  
+}
+
+.projectTechnologies {
+  display: flex;
+  flex-direction: column;
+}
+
+.technologyImages {
+  display: flex;
+  gap: 0.5em;
+  position: relative;
+}
+
+.techLogo {
+  width: 32px;
+  height: 32px;
+}
+
+.figma {
+  /* position: relative;
+  cursor: pointer; */
 }
 
 
@@ -178,12 +238,21 @@ height: 32px;
   justify-content: space-between;
   margin: 4em 0 0 0;
   padding: 0 2em;
-
+  width: 100%;
   position: fixed;
-  bottom: 60;
+  bottom: -100px; 
   left: 0;
   z-index: 1000;
+  transition: bottom 0.3s ease;
+  background-color: hsl(0, 0%, 22%);
+  padding-bottom: 1em;
 }
+
+.projectButtomNav.visible {
+  bottom: 60px; 
+}
+
+
 
 .previousBtn, .nextBtn {
   border-bottom: solid 3px transparent;
@@ -260,6 +329,8 @@ height: 32px;
     padding: 7em 0 3em 0;
     border-radius: 16px;
     background-color: hsl(0, 0%, 24%);
+    position: relative;
+    z-index: 999;
     
   }
   

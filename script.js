@@ -31,11 +31,40 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
   })
+
+  // Segment control functionality
+  const projectListContainer = document.getElementById('works');
+  const resumeContainer = document.getElementById('resume');
+  
+  // Add event listeners to segment control
+  const segmentInputs = document.querySelectorAll('input[name="segment"]');
+  segmentInputs.forEach(input => {
+    input.addEventListener('change', function() {
+      if (this.value === 'option1') {
+        // Show projects
+        projectListContainer.style.display = 'block';
+        resumeContainer.style.display = 'none';
+      } else {
+        // Show resume
+        projectListContainer.style.display = 'none';
+        resumeContainer.style.display = 'block';
+      }
+    });
+  });
+
+  // Clear any existing project items
+  const projectListElement = document.getElementById('project-list');
+  if (projectListElement) {
+    projectListElement.innerHTML = '';
+  }
+
   
   // create project and render in html
   
   projectList.forEach(project => {
     const link = document.createElement('a')
+    const workItem = document.createElement('div');
+    workItem.className = 'work-item'
 
     // create a link
     if (project.file) {
@@ -55,12 +84,22 @@ document.addEventListener('DOMContentLoaded', function() {
   
     link.appendChild(idSpan)
     link.appendChild(titleSpan)
-
-    container.append(link)
-    link.className = "projectLink"
-
     
+    // Add the class and data attribute to the link
+    link.className = "projectLink";
+    link.setAttribute('data-project', project.id);
+    
+    // Append link to workItem
+    workItem.appendChild(link);
+    
+    // Append workItem to the appropriate container
+    if (projectListElement) {
+      projectListElement.appendChild(workItem);
+    } else {
+      container.appendChild(workItem);
+    }
   })
+
 
 
 });
