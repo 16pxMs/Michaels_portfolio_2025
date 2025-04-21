@@ -1,6 +1,7 @@
 
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
+  console.log("Project page DOM loaded");
 
   let readMoreButton = document.querySelector('.read-more-btn');
   let content = document.querySelector('.read-more-content');
@@ -8,40 +9,15 @@ document.addEventListener('DOMContentLoaded', function() {
   let buttonMoved = false;
   const container = document.getElementById('works')
   
-  const projectList = [
-    { id: "001", 
-      title: "Project1",
-      file:"project1.html"
-    },
-  
-    { id: "002", 
-      title: "",
-      file:""
-    },
-    
-    { id: "003", 
-      title: "",
-      file:"",
-    },
-  
-    { id: "004", 
-      title: "",
-      file:"",
-    }
-        
-  ]
-  
   
   readMoreButton.addEventListener('click', function() {
   
     content.classList.toggle('show');
     
-    
     if (!buttonMoved) {
       content.appendChild(readMoreButton);
       buttonMoved = true;
     }
-    
     
     if (content.classList.contains('show')) {
       readMoreButton.textContent = "🙈 Show less";
@@ -63,8 +39,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // create a link
     if (project.file) {
-      link.href = `${project.file}?id=${encodeURIComponent(project.id)}&title=${encodeURIComponent(project.title)}`
-      link.target = "_blank"
+      link.href = `${project.file}?id=${encodeURIComponent(project.id)}`
+      link.target = "_"
       } else {
       link.href = "#"
     }
@@ -85,75 +61,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     
   })
-  
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  // Get introduction element and make it visible
-  const introduction = document.getElementById('introduction');
-  introduction.style.visibility = 'visible';
-  
-  // Get all spans in the introduction
-  const spans = introduction.querySelectorAll('span');
-  
-  // Animate each span with a slight delay between them
-  spans.forEach((span, index) => {
-    // Create slight randomization in the animation
-    const randomDelay = Math.random() * 0.3; // Random delay up to 0.3 seconds
-    const randomDuration = 0.6 + Math.random() * 0.4; // Random duration between 0.6 and 1 second
-    
-    span.style.animationName = 'textAppear';
-    span.style.animationDuration = `${randomDuration}s`;
-    span.style.animationDelay = `${0.1 + index * 0.03 + randomDelay}s`; // Stagger the animations
-    span.style.animationFillMode = 'forwards';
-    span.style.animationTimingFunction = 'cubic-bezier(0.25, 0.1, 0.25, 1.0)';
-  });
-  
-  
-
-  // Add click event for tabs - Updated for toggle functionality
-  const tabs = document.querySelectorAll('.tab');
-  const worksContent = document.querySelector('.works-grid');
-  const resumeContent = document.querySelector('.resume-content');
-  
-
-  
 });

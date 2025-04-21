@@ -23,12 +23,28 @@ body {
 main {
   width: 100%;
   min-height: 100vh;
-  background-color: #383838;
+  background-color: hsl(0, 0%, 22%);
   position: relative;
   overflow: hidden;
   padding-top: 80px;
   z-index: 1;
 }
+
+h1 {
+  color: hsl(0, 0%, 100%);
+  margin: 0;
+}
+
+h6 {
+  color: hsl(0, 0%, 100%);
+  margin: 0;
+}
+
+p {
+  color: hsl(0, 0%, 100%);
+}
+
+
 
 /* Top navigation */
 
@@ -59,7 +75,7 @@ nav {
 
 .statusContainer {
   color: hsl(0, 0%, 100%);
-  background-color: #97959577;
+  background-color: hsla(0, 2%, 59%, 0.47);
   padding: 0.4em 1em;
   font-size: 0.875em;
   border-radius: 4px;
@@ -96,10 +112,17 @@ height: 32px;
 
 
 /* ===== PROJECT PAGE STYLES ===== */
+
+.aboutProject {
+  display: flex;
+  justify-content: center;
+  gap: 4em;
+}
+
+
 #project-display {
-  padding: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  padding: 0em;
+  max-width: 600px;
 }
   
 #project-id {
@@ -107,6 +130,7 @@ height: 32px;
   font-size: 1.2rem;
   font-weight: 500;
   color: hsl(0, 0%, 100%); 
+  margin-bottom: 0.5em;
 }
   
 #project-title {
@@ -115,21 +139,58 @@ height: 32px;
   color: #dedede;  
 }
 
-.projecrButtomNav {
+
+
+/* right section */
+
+.projectDetails {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+
+.projectLinkButton {
+  display: flex;
+  border-bottom: 3px solid transparent;
+  width: fit-content;
+}
+
+.projectLink {
+  color: hsl(0, 0%, 100%);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.projectLinkButton:hover {
+  border-bottom: 3px solid hsl(0, 0%, 100%);
+
+}
+
+.projectAboutTitle {
+  font-size: 1.125em; 
+}
+
+
+/* buttom Navigation */
+
+.projectButtomNav {
   display: flex;
   justify-content: space-between;
-  margin: 1em;
+  margin: 4em 0 0 0;
   padding: 0 2em;
-  position: relative;
+
+  position: fixed;
+  bottom: 60;
+  left: 0;
+  z-index: 1000;
 }
 
 .previousBtn, .nextBtn {
-border-bottom: solid 3px transparent;
-font-size: 16px;
-color: hsl(0, 0%, 100%);
-cursor: pointer;
-padding-bottom: 5px;
-position: relative;
+  border-bottom: solid 3px transparent;
+  font-size: 16px;
+  color: hsl(0, 0%, 100%);
+  cursor: pointer;
+  padding-bottom: 5px;
 }
 
 .previousBtn:hover, .nextBtn:hover {
@@ -144,18 +205,6 @@ position: relative;
   padding: 0 3em;
 }
 
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  #project-id, 
-  #project-title {
-    font-size: 1.8rem;
-  }
-  
-  .project-content {
-    padding: 1.5rem;
-  }
-}
   
 
 

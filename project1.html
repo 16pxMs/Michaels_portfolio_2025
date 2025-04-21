@@ -13,6 +13,7 @@
     <link rel="manifest" href="/site.webmanifest">
 
     <link rel="stylesheet" href="Project_page.css" />
+    <link rel="stylesheet" href="animation.css"/>
 
 
 </head>
@@ -55,17 +56,44 @@
 
       </nav>
 
-      <div id="project-display">
+      <div class="aboutProject">
+
+        <div id="project-display">
           <h1>
               <span id="project-id"></span>
               <span id="project-title"></span>
           </h1>
+          <div class="projectTechnologies">
+            <p class="technologies">technologies</p>
+            <div class="technologyImages">
+
+            </div>
+          </div>
+        </div>
+
+
+        <div class="projectDetails">
+          <h6 class="projectAboutTitle">About project</h6>
+          <p class="detailCopy">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+            Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula.
+            
+          </p>
+
+          <div class="projectLinkButton">
+           <a href="" target="_blank" class="projectLink">drive.com</a>
+           <img src="/Icons/arrow_outward_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" class="redirectIcon" />
+          </div>
+        </div>
+      
+
       </div>
 
-    
+     
       <!-- button page navigation -->
 
-      <section class="projecrButtomNav">
+      <section class="projectButtomNav">
         
         <span class="previousBtn">
           PREVIOUS
@@ -100,8 +128,9 @@
 
 
     </main>
-
+    <script src="project_data.js"></script>
     <script src="projects.js"></script>
+    <script src="animation.js"></script>
       
 </body>
 </html>
