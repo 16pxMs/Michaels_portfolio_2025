@@ -23,7 +23,7 @@ body {
 main {
   width: 100%;
   min-height: 100vh;
-  background-color: hsl(0, 0%, 22%);
+  background-color: hsl(189, 51%, 7%);
   position: relative;
   overflow: hidden;
   padding-bottom: 100px;
@@ -86,20 +86,22 @@ nav {
 .social-links {
   display: flex;
   align-items: center;
-  gap: 1em;
+  gap: 0.5em;
   height: 32px;
 }
 
 .social-icon {
   transition: transform 0.3s ease;
-  width: 32px;  
-  height: 32px; 
+  width: 24px;  
+  height: 24px; 
   display: block;
 }
 
 .social-icon:hover {
   transform: scale(1.1);
 } 
+/* badge */
+
 
 .ring-container {
   position: relative;
@@ -111,8 +113,8 @@ nav {
 }
 
 .circle {
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   background-color: hsl(93, 77%, 42%);
   border-radius: 50%;
   position: absolute;
@@ -123,8 +125,8 @@ nav {
 .ringring {
   border: 2px solid hsl(93, 77%, 42%);
   border-radius: 50%;
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   position: absolute;
   animation: pulsate 1.5s ease-out infinite;
   opacity: 0;
@@ -134,7 +136,7 @@ nav {
 .workStatusContainer {
   color: hsl(0, 0%, 100%);
   background-color: hsla(0, 2%, 59%, 0.47);
-  padding: 0.3em 1em;
+  padding: 0.2em 0.8em 0.2em 0.3em;
   font-size: 0.875em;
   border-radius: 4px;
   display: flex;
@@ -145,12 +147,12 @@ nav {
 
 .workstatusText {
   margin: 0;
-
+  font-size: 0.8125em;
+  font-weight: 500;
 }
-  
 
 
-/* ===== PROJECT PAGE STYLES ===== */
+/*  PROJECT PAGE STYLES */
 
 .aboutProject {
   display: flex;
@@ -329,11 +331,68 @@ nav {
     
   }
   
-  .footerCopyright, .footerBragCopy  {
+  .footerCopyright, .footerConversionCopy {
     color: hsl(0, 0%, 80%);
   }
   
+  .footerConversionWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 0 4em 0;
+  }
+
   .footerCopyright {
     font-size: small;
+  }
+  
+  
+  .footerConversionCopy {
+    text-align: center;
+    font-size: 2em;
+    font-weight: 600;
+    width: 450px;
+  
+  }
+  
+  
+  .footerCTA {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+  
+  }
+  
+  .getInTouch {
+    text-decoration: none;
+    border: none;
+    border-radius: 24px;
+    background-color: hsl(337, 72%, 59%);
+    color:hsl(0, 0%, 100%);
+    font-family: inherit;
+    padding: 0.5em 3em;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .getInTouch:hover {
+    background-color: hsl(0, 0%, 75%);
+    color: hsl(0, 0%, 29%)
+  }
+  
+  .resume-button {
+    text-decoration: none;
+    color: hsl(0, 0%, 100%);
+    background-color: hsl(0, 0%, 40%);
+    border: none;
+    border-radius: 24px;
+    padding: 0.5em 1em;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .resume-button:hover {
+    background-color: hsl(0, 0%, 75%);
+    color: hsl(0, 0%, 29%)
   }
   
