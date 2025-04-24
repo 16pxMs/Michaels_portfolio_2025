@@ -52,4 +52,16 @@
     50% { opacity: 0.8; }
     100% { transform: scale(1.2); opacity: 0; }
   }
+
+
+  @keyframes gridFadeIn {
+    0% {
+      opacity: 0;
+      background-position: -5px 0, 19px 0; /* Slightly offset initial position */
+    }
+    100% {
+      opacity: 1;
+      background-position: 0 0, 24px 0; /* Final position */
+    }
+  }
   

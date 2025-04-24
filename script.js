@@ -32,25 +32,25 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   })
 
-  // Segment control functionality
-  const projectListContainer = document.getElementById('works');
-  const resumeContainer = document.getElementById('resume');
+  // // Segment control functionality
+  // const projectListContainer = document.getElementById('works');
+  // const resumeContainer = document.getElementById('resume');
   
-  // Add event listeners to segment control
-  const segmentInputs = document.querySelectorAll('input[name="segment"]');
-  segmentInputs.forEach(input => {
-    input.addEventListener('change', function() {
-      if (this.value === 'option1') {
-        // Show projects
-        projectListContainer.style.display = 'block';
-        resumeContainer.style.display = 'none';
-      } else {
-        // Show resume
-        projectListContainer.style.display = 'none';
-        resumeContainer.style.display = 'block';
-      }
-    });
-  });
+  // // Add event listeners to segment control
+  // const segmentInputs = document.querySelectorAll('input[name="segment"]');
+  // segmentInputs.forEach(input => {
+  //   input.addEventListener('change', function() {
+  //     if (this.value === 'option1') {
+  //       // Show projects
+  //       projectListContainer.style.display = 'block';
+  //       resumeContainer.style.display = 'none';
+  //     } else {
+  //       // Show resume
+  //       projectListContainer.style.display = 'none';
+  //       resumeContainer.style.display = 'block';
+  //     }
+  //   });
+  // });
 
   // Clear any existing project items
   const projectListElement = document.getElementById('project-list');

@@ -23,7 +23,8 @@ body {
 main {
   width: 100%;
   min-height: 100vh;
-  background-color: hsl(189, 51%, 7%);
+  /* background-color: hsl(189, 51%, 7%); */
+  background-color: hsl(0, 0%, 97%);
   position: relative;
   overflow: hidden;
   padding-bottom: 100px;
@@ -31,21 +32,27 @@ main {
   z-index: 1;
 }
 
-h1 {
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6,
+li {
   color: hsl(0, 0%, 100%);
   margin: 0;
 }
 
-h6 {
-  color: hsl(0, 0%, 100%);
-  margin: 0;
-}
+
 
 p {
   color: hsl(0, 0%, 100%);
 }
 
-
+article {
+  width: 800px;
+  margin: auto;
+}
 
 /* Top navigation */
  
@@ -158,6 +165,7 @@ nav {
   display: flex;
   justify-content: center;
   gap: 4em;
+  margin: 0 0 3em 0;
 }
 
 
@@ -225,6 +233,12 @@ nav {
 
 .projectAboutTitle {
   font-size: 1.125em; 
+}
+
+
+.ProjectImages {
+  width: 800px;
+  height: auto;
 }
 
 

@@ -22,23 +22,23 @@
 
   <body>
     <main class="main-container">
-      <!-- <div class="background-images">
-        <img
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/60a3211b807b743c96af91107b9d508b54a29071"
-          alt=""
-          class="background-image"
-        />
-        <img
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/2d494ee26384e2247e974b652a5961355846a273"
-          alt=""
-          class="background-image"
-        />
-      </div> -->
+      
+      <div class="grid-background">
+        <!-- Your content goes here -->
+      </div>
       <nav> 
         <ul class="navContainer">
           <li class="Mslogo">
             <img src="/Images/MS_Logo.svg" alt="Logo" />
           </li>
+
+          <input type="checkbox" id="theme-switcher" hidden aria-hidden="true">
+            <label for="theme-switcher" class="theme-btn" aria-label="Toggle dark mode">
+              <span class="theme-icon">
+                <img src="/Icons/Theme/Dark_fill.svg" alt="Dark mode" class="dark-icon">
+                <img src="/Icons/Theme/Light_fill.svg" alt="Light mode" class="light-icon">
+              </span>
+            </label>
 
           <div class="socials">
             <!-- social links  -->
@@ -50,7 +50,7 @@
 
               <a href="mailto:mshumaker.ms@gmail.com"
                 target="_blank" rel="noopener noreferrer">
-                <img class="social-icon" src="/Icons/Email_Icon.svg" alt="Email icon button" />
+                <img class="social-icon emailIcon" src="/Icons/Email_Icon.svg" alt="Email icon button" />
                   
               </a>
       
@@ -68,6 +68,7 @@
               <p class="workstatusText">Open to work</p>
             </div>
 
+          </div>
 
         </ul>
 
@@ -79,10 +80,10 @@
           <h1 class="h1Copy"> Designing with impact, Building with intent.</h1>
 
           
-          <p class="greeting">👋 Hey there, I'm <span class="text">Michael</span> — a Product Designer crafting clean, intuitive, and scalable experiences that make life easier and drive real results.</p>
+          <p class="greeting">Hey there, I'm <span class="text">Michael</span> — a Product Designer crafting clean, intuitive, and scalable experiences that make life easier and drive real results.</p>
 
           <p class="experience">I curently lead end to end design at 
-            <span class="link">
+            <span class="eversend">
             <a href ="https://eversend.co/" target="_blank" rel="noopener noreferrer"> Eversend </a> 
             </span>, where I’ve:
           </p>
@@ -152,45 +153,6 @@
           </div>
 
 
-          <!-- resume timeline -->
-           
-          <!-- <div id="resume" class="resume-container" style="display: none;">
-            <div class="timeline">
-              <div class="timeline-item">
-                <div class="timeline-date">2022 - Present</div>
-                <div class="timeline-content">
-                  <h3>Eversend</h3>
-                  <p>Lead Product Designer</p>
-                  <ul>
-                    <li>Optimized KYC and deposit flows, increasing conversion by 30%</li>
-                    <li>Reduced chargebacks by 90% through UX improvements</li>
-                    <li>Built a design system boosting development efficiency by 20%</li>
-                  </div>
-              </div>
-              <div class="timeline-item">
-                <div class="timeline-date">2020 - 2022</div>
-                <div class="timeline-content">
-                  <h3>Freelance Designer</h3>
-                  <p>Product & Visual Designer</p>
-                  <ul>
-                    <li>Designed and shipped multiple SaaS and fintech products</li>
-                    <li>Created branding systems for startups and established companies</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="timeline-item">
-                <div class="timeline-date">2018 - 2020</div>
-                <div class="timeline-content">
-                  <h3>Previous Company</h3>
-                  <p>Product Designer</p>
-                  <ul>
-                    <li>Accomplishment 1</li>
-                    <li>Accomplishment 2</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div> -->
 
 
         </section>    
@@ -213,7 +175,12 @@
               Get in Touch
             </a>
 
-            <a href="/resume/makayla-shumaker-resume.pdf"      download class="resume-button"> Download Resume
+            
+            <a href="https://drive.google.com/uc?export=download&id=1uHDQ16A-S-M0Vs9ILMzFKjZ0tNRaa5qe" 
+            class="resume-button"
+            target="_blank"
+            onclick="setTimeout(()=>{window.location.href='https://drive.google.com/uc?export=download&id=1uHDQ16A-S-M0Vs9ILMzFKjZ0tNRaa5qe'}, 500); return false;">
+            Download Resume
             </a>
           </div>
         </div>
