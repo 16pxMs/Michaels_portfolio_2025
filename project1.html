@@ -22,10 +22,18 @@
       <nav> 
         <ul class="navContainer">
           <li class="Mslogo">
-            <a href="/index.html" target="_self" rel="noopener noreferrer"> 
-              <img src="/Images/MS_Logo.svg" alt="Website Logo"/>
-            </a>
+            <a href="/index.html" target="_blank" rel="noopener   noreferrer">
+              <img src="/Images/MS_Logo.svg" alt="Logo" />
+             </a>
           </li>
+
+          <input type="checkbox" id="theme-switcher" hidden aria-hidden="true">
+            <label for="theme-switcher" class="theme-btn" aria-label="Toggle dark mode">
+              <span class="theme-icon">
+                <img src="/Icons/Theme/Dark_fill.svg" alt="Dark mode" class="dark-icon">
+                <img src="/Icons/Theme/Light_fill.svg" alt="Light mode" class="light-icon">
+              </span>
+            </label>
 
           <div class="socials">
             <!-- social links  -->
@@ -37,7 +45,7 @@
 
               <a href="mailto:mshumaker.ms@gmail.com"
                 target="_blank" rel="noopener noreferrer">
-                <img class="social-icon" src="/Icons/Email_Icon.svg" alt="Email icon button" />
+                <img class="social-icon emailIcon" src="/Icons/Email_Icon.svg" alt="Email icon button" />
                   
               </a>
       
@@ -55,6 +63,7 @@
               <p class="workstatusText">Open to work</p>
             </div>
 
+          </div>
 
         </ul>
 
@@ -228,41 +237,51 @@
         </span>
       </section>
 
+        
       <footer class="footer">
 
-        <!-- <p class="footerBragCopy"> Just to let you know i  designed & built this website myself , every  pixel of it!!!
-        </p> -->
         <div class="footerConversionWrapper">
           <h3 class="footerConversionCopy">
-            If Your UI Isn’t Converting Like a Caffeinated Sales Bot, It’s Costing You Money. Hire Me to fix It.
+            If Your UI Isn’t Converting Like a Caffeinated Sales Bot, It’s Costing You Money. Let me help turn that around.
       
           </h3>
 
           <div class="footerCTA">
-            <a href="mailto:mshumaker.ms@gmail.com?  subject=Fix%20My%20UI" class="getInTouch cta-button">
-              Get in Touch
-            </a>
+            <div class="getInTouchWrapper">
+              <a href="mailto:mshumaker.ms@gmail.com?  subject=Fix%20My%20UI" class="getInTouch cta-button">
+                Get in Touch
+              </a>
 
-            <a href="https://drive.google.com/uc?export=download&id=1uHDQ16A-S-M0Vs9ILMzFKjZ0tNRaa5qe" 
-            class="resume-button"
-            target="_blank"
-            onclick="setTimeout(()=>{window.location.href='https://drive.google.com/uc?export=download&id=1uHDQ16A-S-M0Vs9ILMzFKjZ0tNRaa5qe'}, 500); return false;">
-            Download Resume
-           </a>
+              <img src="/Icons/Arrow_redirect.svg" class="redirectIcon"/> 
+
+            </div>
+            
+
+            <div class="resumeWrapper">
+              <a href="https://drive.google.com/uc?export=download&id=1uHDQ16A-S-M0Vs9ILMzFKjZ0tNRaa5qe" 
+              class="resume-button"
+              target="_blank"
+              onclick="setTimeout(()=>{window.location.href='https://drive.google.com/uc?export=download&id=1uHDQ16A-S-M0Vs9ILMzFKjZ0tNRaa5qe'}, 500); return false;">
+              Download Resume
+              </a>
+
+              <img src="/Icons/Document.svg" class="resumeIcon"/> 
+            </div>
+            
           </div>
         </div>
 
-
-        <div>
-          <img class="footerImag" src="/Icons/Michael_Footer_Img.svg"></div>
+        <div class="copyrightWrapper">
+          
+          <img class="footerImage" src="/Icons/Michael_Footer_Img.svg">
+  
+          <p class="footerCopyright"> ©ms 2025 </p>
         </div>
-
-        <p class="footerCopyright"> ©ms 2025 </p>
+       
 
       </footer>
 
   
-        
 
 
     </main>

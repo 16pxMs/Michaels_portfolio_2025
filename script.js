@@ -20,9 +20,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     if (content.classList.contains('show')) {
-      readMoreButton.textContent = "🙈 Show less";
+      readMoreButton.textContent = "Show less";
     } else {
-      readMoreButton.textContent = "😊 Keep reading";
+      readMoreButton.textContent = "Keep reading";
       
   
       if (buttonMoved) {

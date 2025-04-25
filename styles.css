@@ -1,4 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Sora:wght@100..800&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Sora:wght@100..800&display=swap'); */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+
 
 
 *, 
@@ -15,12 +19,12 @@
   /* Light theme variables */
   --brand-color: hsl(6, 100%, 62%);
 
+  /* Background colors */
   --bg-color: hsl(29, 100%, 98%) ;
   --bg-button-primary: hsl(13, 100%, 65%);
-  --bg-btn-prm2: hsl(50, 10%, 60%);
-  --btn-hover-prm2: hsl(49, 14%, 69%);
+  --bg-btn-sec: hsl(50, 10%, 60%);
+  --btn-hover-sec: hsl(49, 14%, 69%);
   --button-hover-bg: hsl(13, 100%, 20%);
-  --bg-button-grey: hsl(50, 10%, 60%);
   --button-hover-sec: hsl(50, 12%, 50%);
   --bg-footer: hsl(30, 100%, 97%);
 
@@ -29,28 +33,26 @@
   --bg-badge:hsl(69, 52%, 87%);
   --text-badge: hsl(85, 36%, 35%);
 
-  --text-color: hsl(0, 0%, 29%);
+  /* Text colors */
+  --text-color: hsl(14, 4%, 35%);
   --text-button-primary: hsl(0, 0%, 100%);
   --text-white: hsl(0, 0%, 100%);
   --text-color-eversend: hsl(243, 99%, 65%);
   --text-color-grey: hsl(0, 0%, 29%);
-  --text-metrics: hsl(13, 100%, 65%);
+  --text-metrics: hsl(0, 0%, 29%);
   --text-brand: var(--brand-color);
 
+  /* UI elements */
   --grid-color: hsl(68, 52%, 91%);
   --nav-bg: hsla(0, 0%, 97%, 0.243);
   --footer-bg: hsl(187, 0%, 95%);
   
-  --segment-active-bg: hsl(0, 0%, 69%);
-  --segment-inactive-bg: hsl(0, 0%, 29%);
-  --segment-inactive-text: hsl(0, 0%, 80%);
-  --segment-hover-bg: hsl(0, 0%, 65%);
-
+  /* Borders */
   --border-text: hsl(189, 51%, 7%);
-
   --border-link-eversend: hsl(0, 0%, 28%);
-  --border-link-grey: hsl(0, 0%, 85%);
+  --border-link-grey: hsl(0, 0%, 29%);
 
+  /* Shadows */
   --boxshadow-button: hsl(0, 0%, 12%);
 
   
@@ -58,41 +60,52 @@
 }
 
 .dark-mode {
-  --bg-color: hsl(125, 6%, 19%);
-  --bg-button-primary: hsl(337, 72%, 59%);
-  --bg-button-grey: hsl(0, 0%, 75%);
-  --bg-footer: hsl(189, 51%, 8%);
+  /* Dark theme variables */
+  --brand-color: hsl(6, 100%, 72%); 
+
+  /* Background colors */
+  --bg-color: hsl(230, 15%, 16%); 
+  --bg-button-primary: hsl(13, 100%, 65%); 
+  --bg-btn-sec: hsl(50, 10%, 60%); 
+  --btn-hover-sec: hsl(230, 15%, 50%); 
+  --button-hover-bg: hsl(13, 100%, 75%); 
+  --button-hover-sec: hsl(230, 15%, 55%); 
+  --bg-footer: hsl(230, 15%, 12%); 
+
   /* circle blinker animation */
-  --bg-color-circleblinker: hsl(93, 77%, 42%);
-  --bg-badge-grey:hsla(0, 2%, 28%, 0.47);
+  --bg-color-circleblinker: hsl(93, 77%, 52%); 
+  --bg-badge: hsl(230, 20%, 25%); 
+  --text-badge: hsl(85, 60%, 70%); 
 
-  --text-color: hsl(0, 0%, 97%);
-  --text-button-primary: hsl(0, 0%, 100%);
-  --text-color-eversend: hsl(243, 99%, 65%);
-  --text-color-grey: hsl(0, 0%, 29%);
-  --text-metrics: hsl(180, 94%, 40%);
+  /* Text colors */
+  --text-color: hsl(0, 0%, 85%); 
+  --text-button-primary: hsl(0, 0%, 100%); 
+  --text-white: hsl(0, 0%, 100%); 
+  --text-color-eversend: hsl(243, 99%, 75%); 
+  --text-color-grey: hsl(0, 0%, 70%);
+  --text-metrics: hsl(0, 0%, 100%); 
+  --text-brand: var(--brand-color);
 
-  --grid-color: hsl(68, 52%, 19%);
-  --nav-bg: hsla(189, 51%, 10%, 0.243);
-  --footer-bg: hsl(187, 20%, 15%);
+  /* UI elements */
+  --grid-color: hsl(230, 15%, 25%); 
+  --nav-bg: hsla(227, 15%, 12%, 0.243); 
+  --footer-bg: hsl(230, 15%, 10%); 
+  
 
-  --segment-active-bg: hsl(0, 0%, 45%);
-  --segment-inactive-bg: hsl(0, 0%, 22%);
-  --segment-inactive-text: hsl(0, 0%, 70%);
-  --segment-hover-bg: hsl(0, 0%, 40%);
+  /* Borders */
+  --border-text: hsl(189, 51%, 85%); 
+  --border-link-eversend: hsl(0, 0%, 60%);
+  --border-link-grey: hsl(0, 0%, 50%);
 
-  --border-text: hsl(0, 0%, 100%);
-  --border-link-eversend: hsl(243, 99%, 65%);
-  --border-link-grey: hsl(0, 0%, 100%);
-
-
+  /* Shadows */
+  --boxshadow-button: hsl(230, 20%, 25%);
  
 }
 
 
 body {
   margin: 0;
-  font-family: 'Sora', sans-serif;
+  font-family: 'Geist',  sans-serif;
   line-height: 1.5;
   background: var(--bg-color);
   color: var(--text-color);
@@ -174,18 +187,19 @@ body {
 
 .h1Copy {
   font-size: 2em;
-  line-height: 120%;
+  line-height: 150%;
   font-weight: 100;
   color: var(--text-color);
-  max-width: 70%;
+  max-width: 60%;
+  margin: 0 0 2em 0;
 }
 
 
 
 p {
   font-size: 1em;
-  font-weight: 300;
-  max-width: 80%;
+  font-weight: 400;
+  max-width: 86%;
   color: var(--text-color);
 }
 
@@ -196,7 +210,6 @@ ul {
 
 li {
   color: var(--text-color);
-  font-style: italic;
   font-size: 0.875em;
   font-weight: 300;
   max-width: 75%;
@@ -229,17 +242,18 @@ nav {
 }
 
 .navContainer {
-display: flex;
-justify-content: space-around;
-align-items: center;
-width: 100%;
-padding: 0;
-margin: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 .Mslogo {
   list-style-type: none;
 }
+
 
 /* socail icons */
 
@@ -396,8 +410,8 @@ margin: 0;
   align-items: center;
   justify-content: space-between;
   padding: 0.5em 1em;
-  margin: 0.5`em 0 0 0.2em;
-  background-color: var(--bg-btn-prm2);
+  margin: 0.9em 0 0 0.2em;
+  background-color: var(--bg-btn-sec);
   color: var(--text-button-primary);
   font-size: 0.8em;
   font-family: inherit;
@@ -411,7 +425,7 @@ margin: 0;
 }
 
 .read-more-btn:hover {
-  background-color: var(--btn-hover-prm2);
+  background-color: var(--button-hover-sec);
   transform: translate(-1px, 1px);
   box-shadow: -5px 5px 0 var(--boxshadow-button);
 }
@@ -452,6 +466,7 @@ margin: 0;
 
 .metrics {
   color: var(--text-metrics);
+  font-weight: 600;
 } 
 
 
@@ -549,9 +564,8 @@ label span {
   font-size: 1.5em;
   line-height: 120%;
   font-weight: 400;
-  /* color: hsl(0, 0%, 100%); */
   color: var(--text-color);
-  margin-bottom: 2em;
+  margin-bottom: 1em;
 }
 
 
@@ -562,7 +576,7 @@ label span {
   display: flex;
   flex-direction: column;
   gap: 2em;
-  cursor: pointer;
+  margin: 0 0 3em 0;
 }
 
 .work-item {
@@ -585,14 +599,37 @@ label span {
   border-bottom: solid 3px transparent;
   transition: transform 0.3 ease, border-bottom-color 0.3s ease;
   position: relative;
-  padding-right: 30px;
-  width: 100%
+  padding: 0 0 1em 0;
+  width: 100%;
+  isolation: isolate;
+  transition: transform 0.3s ease;
 }
 
-.projectLink:hover {
+.projectLink::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: var(--border-text);
+  transition: width 0.4s ease-out;
+  z-index: 1;
+}
+
+/* .projectLink:hover {
   border-bottom: solid 3px var(--border-text);
   color: var(--text-color);
   transform: translateY(-2px);
+} */
+
+.projectLink:hover {
+  color: var(--text-color);
+  transform: translateY(-2px);
+}
+
+.projectLink:hover::before {
+  width: 100%;
 }
 
 .projectLink::after {
@@ -644,7 +681,7 @@ label span {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 7em 01.5em 0 1.5em;
+  margin: 10em 01.5em 0 1.5em;
   padding: 7em 0 3em 0;
   border-radius: 16px;
   background-color: var(--bg-footer);
@@ -653,35 +690,70 @@ label span {
 
 .footerConversionWrapper {
   display: flex;
+  align-items: flex-start;
   flex-direction: column;
-  align-items: center;
-  margin: 0 0 4em 0;
+  margin: 0 0 20em 0;
 }
 
 .footerCopyright, .footerConversionCopy {
   color: var(--text-color);
 }
 
-.footerCopyright {
-  font-size: small;
-}
-
 
 .footerConversionCopy {
-  text-align: center;
-  font-size: 2em;
+  text-align: left;
+  font-size: 3em;
   font-weight: 600;
-  width: 450px;
+  max-width: 660px;
 
 }
 
 
 .footerCTA {
   display: flex;
-  align-items: center;
-  gap: 2em;
+  align-items:start;
+  flex-direction: column;
+  gap: 1em;
 
 }
+
+.getInTouchWrapper {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  position: relative;
+  padding-bottom: 0.5em;
+}
+
+.getInTouchWrapper::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background-color: var(--bg-button-primary);
+  transition: width 0.4s ease-out;
+}
+
+
+.getInTouchWrapper:hover::after {
+  width: 100%;
+}
+
+.getInTouch {
+  color: var(--bg-button-primary);
+  font-size: 2em;
+  text-decoration: none;
+}
+
+
+
+.redirectIcon {
+  width: 40px;
+  height: 40px;
+}
+
 /* 
 .getInTouch {
   text-decoration: none;
@@ -700,7 +772,7 @@ label span {
   color: var(--text-button-primary);
 } */
 
-.getInTouch {
+/* .getInTouch {
   position: relative;
   display: flex;
   align-items: center;
@@ -728,60 +800,63 @@ label span {
 .getInTouch:active {
   transform: translate(-6px, 6px);
   box-shadow: 0px 0px 0 var(--boxshadow-button);
-}
-
-
-/* 
-.resume-button {
-  text-decoration: none;
-  color: var(--text-button-primary);
-  background-color: var(--bg-button-grey);
-  border: none;
-  border-radius: 24px;
-  padding: 0.5em 1.5em;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.resume-button:hover {
-  background-color: var(--button-hover-sec);
-  color: var(--text-white);
 } */
 
-.resume-button {
+.resumeWrapper {
+  display: flex;
+  align-items: center;
+  gap: 1em;
   position: relative;
+  padding-bottom: 0.5em;
+}
+
+.resumeWrapper::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background-color: var(--bg-btn-sec);
+  transition: width 0.4s ease-out;
+}
+
+.resumeWrapper:hover::after {
+  width: 100%;
+}
+
+.resume-button {
+  color: var(--bg-btn-sec);
+  font-size: 2em;
+  text-decoration: none;
+}
+
+
+
+.resumeIcon {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.4s ease-out;
+}
+
+resumeWrapper:hover .resumeIcon {
+  transform: translateX(4px);
+}
+
+
+  
+.copyrightWrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5em 1.5em;
-  background-color: var(--bg-button-grey);
-  color: var(--text-white);
-  font-size: 1em;
-  border: none;
-  cursor: pointer;
-  box-shadow: -6px 6px 0 var(--boxshadow-button);
-  transition: all 0.08s cubic-bezier(0.3, 0.7, 0.4, 1);
-  text-decoration: none;
-  width: fit-content;
+  padding: 0 2em; 
+  width: 100%;
+
 }
 
-.resume-button:hover {
-  background-color: var(--button-hover-sec);
-  color: var(--text-white);
-  transform: translate(-1px, 1px);
-  box-shadow: -5px 5px 0 var(--boxshadow-button);
+.footerCopyright {
+  font-size: 0.875em;
 }
-
-.resume-button:active {
-  transform: translate(-6px, 6px);
-  box-shadow: 0px 0px 0 var(--boxshadow-button);
-}
-  
-
-/* .footerBragCopy {
-font-style: italic;
-} */
-
 
 
 
