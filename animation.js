@@ -92,25 +92,3 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-const bottomNav = document.querySelector('.projectButtomNav');
-const footer = document.querySelector('.footer');
-  
-window.addEventListener('scroll', function() {
- // Check if scrolled past first viewport height
- if (window.scrollY > window.innerHeight) {
-     // Check if reached footer
-    const footerPosition = footer.getBoundingClientRect().top;
-    const navHeight = bottomNav.offsetHeight;
-      
- if (footerPosition > window.innerHeight + navHeight) {
-     bottomNav.classList.add('visible');
-    } else {
-      bottomNav.classList.remove('visible');
-    }
-    } else {
-    bottomNav.classList.remove('visible');
-    }
-
-});
-
-  

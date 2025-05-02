@@ -1,28 +1,34 @@
 var projectList = [
     { id: "001", 
-    title: "Saving Thousands in Chargebacks by Rethinking a “Simple” Flow ",
-    file:"project1.html"
+      title: "Saving Thousands in Chargebacks by Rethinking a “Simple” Flow ",
+      file:"project1.html",
+      caseStudy: ""
     },
 
     { id: "002", 
-    title: "",
-    file:""
+      title: "hlhalhlhhlahlhg",
+      file:"",
+      caseStudy: ""
+
     },
     
     { id: "003", 
-    title: "",
-    file:"",
+      title: "",
+      file:"",
+      caseStudy: ""
     },
 
     { id: "004", 
-    title: "",
-    file:"",
+      title: "",
+      file:"",
+      caseStudy: ""
     },
 
 
     { id: "005", 
-        title: "",
-        file:"",
-        },
+      title: "",
+      file:"",
+      caseStudy: ""
+    }
         
 ]    

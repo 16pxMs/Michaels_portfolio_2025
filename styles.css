@@ -23,9 +23,7 @@
   --bg-color: hsl(29, 100%, 98%) ;
   --bg-button-primary: hsl(13, 100%, 65%);
   --bg-btn-sec: hsl(50, 10%, 60%);
-  --btn-hover-sec: hsl(49, 14%, 69%);
-  --button-hover-bg: hsl(13, 100%, 20%);
-  --button-hover-sec: hsl(50, 12%, 50%);
+  --btn-hover-sec: hsl(49, 14%, 50%);
   --bg-footer: hsl(30, 100%, 97%);
 
   /* circle blinker animation */
@@ -68,8 +66,6 @@
   --bg-button-primary: hsl(13, 100%, 65%); 
   --bg-btn-sec: hsl(50, 10%, 60%); 
   --btn-hover-sec: hsl(230, 15%, 50%); 
-  --button-hover-bg: hsl(13, 100%, 75%); 
-  --button-hover-sec: hsl(230, 15%, 55%); 
   --bg-footer: hsl(230, 15%, 12%); 
 
   /* circle blinker animation */
@@ -385,24 +381,6 @@ nav {
 }
 
 
-/* read more button */
-/* 
-.read-more-btn {
-  border: none;
-  border-radius: 24px;
-  background-color: var(--bg-button-primary);
-  color: var(--text-button-primary);
-  font-family: inherit;
-  padding: 0.5em 1em;
-  margin: 0.4em 0 0 0;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.read-more-btn:hover {
-  background-color: var(--button-hover-bg);
-  color: var(--text-button-primary);
-} */
 
 .read-more-btn {
   position: relative;
@@ -425,7 +403,7 @@ nav {
 }
 
 .read-more-btn:hover {
-  background-color: var(--button-hover-sec);
+  background-color: var(--btn-hover-sec);
   transform: translate(-1px, 1px);
   box-shadow: -5px 5px 0 var(--boxshadow-button);
 }
@@ -663,15 +641,15 @@ label span {
 }
 
 .projectLink[data-project="002"]::after {
-  background-image: url('');
+  background-image: url('/pexels-alina-chernii-682289345-31414924.jpg');
 }
 
 .projectLink[data-project="003"]::after {
-  background-image: url('');
+  background-image: url('/pexels-alina-chernii-682289345-31414924.jpg');
 }
 
 .projectLink[data-project="004"]::after {
-  background-image: url('');
+  background-image: url('/pexels-alina-chernii-682289345-31414924.jpg');
 }
 
 
@@ -705,6 +683,7 @@ label span {
   font-size: 3em;
   font-weight: 600;
   max-width: 660px;
+  margin: 0 0 1em 0;
 
 }
 
@@ -754,53 +733,7 @@ label span {
   height: 40px;
 }
 
-/* 
-.getInTouch {
-  text-decoration: none;
-  border: none;
-  border-radius: 24px;
-  background-color: var(--bg-button-primary);
-  color: var(--text-button-primary);
-  font-family: inherit;
-  padding: 0.5em 3em;
-  transition: all 0.3s ease;
-  cursor: pointer;
-} */
-/* 
-.getInTouch:hover {
-  background-color: var(--button-hover-bg);
-  color: var(--text-button-primary);
-} */
 
-/* .getInTouch {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.5em 3em;
-  background-color: var(--bg-button-primary);
-  color: var(--text-button-primary);
-  font-family: inherit;
-  font-size: 1em;
-  border: none;
-  cursor: pointer;
-  box-shadow: -6px 6px 0 var(--boxshadow-button);
-  transition: all 0.08s cubic-bezier(0.3, 0.7, 0.4, 1);
-  text-decoration: none;
-  width: fit-content;
-}
-
-
-.getInTouch:hover {
-  background-color:var(--button-hover-bg);
-  transform: translate(-1px, 1px);
-  box-shadow: -5px 5px 0 var(--boxshadow-button);
-}
-
-.getInTouch:active {
-  transform: translate(-6px, 6px);
-  box-shadow: 0px 0px 0 var(--boxshadow-button);
-} */
 
 .resumeWrapper {
   display: flex;

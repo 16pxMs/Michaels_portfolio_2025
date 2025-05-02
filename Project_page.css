@@ -23,8 +23,6 @@
   --bg-button-primary: hsl(13, 100%, 65%);
   --bg-btn-sec: hsl(50, 10%, 60%);
   --btn-hover-sec: hsl(49, 14%, 69%);
-  --button-hover-bg: hsl(13, 100%, 20%);
-  --button-hover-sec: hsl(50, 12%, 50%);
   --bg-footer: hsl(30, 100%, 97%);
 
   /* circle blinker animation */
@@ -37,7 +35,7 @@
   --text-button-primary: hsl(0, 0%, 100%);
   --text-white: hsl(0, 0%, 100%);
   --text-color-eversend: hsl(243, 99%, 65%);
-  --text-color-grey: hsl(0, 0%, 29%);
+  --text-color-grey: hsl(0, 0%, 55%);
   --text-metrics: hsl(0, 0%, 29%);
   --text-brand: var(--brand-color);
 
@@ -66,9 +64,7 @@
   --bg-color: hsl(230, 15%, 16%); 
   --bg-button-primary: hsl(13, 100%, 65%); 
   --bg-btn-sec: hsl(50, 10%, 60%); 
-  --btn-hover-sec: hsl(230, 15%, 50%); 
-  --button-hover-bg: hsl(13, 100%, 75%); 
-  --button-hover-sec: hsl(230, 15%, 55%); 
+  --btn-hover-sec: hsl(230, 15%, 50%);
   --bg-footer: hsl(230, 15%, 12%); 
 
   /* circle blinker animation */
@@ -109,6 +105,7 @@ body {
   background: var(--bg-color);
   color: var(--text-color);
   transition: background-color 0.5s, color 0.5s;
+  padding-bottom: 70px; 
 }
 
 /* Theme switcher styling */
@@ -123,7 +120,6 @@ body {
 .dark-icon:hover, 
 .light-icon:hover {
   transform: scale(1.1);
-
 }
 
 
@@ -172,16 +168,13 @@ p {
   color: var(--text-color);
 }
 
-article {
-  width: 800px;
-  margin: auto;
-}
+
 /* Top navigation */
  
 nav {
   width: 100%;
   height: 60px;
-  margin: 0 0 3em 0;
+  margin: 0;
   padding: 0 2em;
   position: fixed;
   top: 0;
@@ -194,7 +187,7 @@ nav {
 
 .navContainer {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   margin: 0;
@@ -299,23 +292,53 @@ ul {
 }
 
 
+/* back button */
+.backBtnWrapper {
+  margin: 60px 0 0 0;
+  padding: 0 2.5em;
+  position: fixed;
+  top: 5px;
+}
+
+.bckBtn {
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 32px;
+  background-color: var(--bg-btn-sec);
+  color: var(--text-white);
+  transition: all 0.3sec ease;
+  cursor: pointer;
+  
+}
+
+.bckBtn:hover {
+  background-color: var(--btn-hover-sec);
+}
 
 
 /*  PROJECT PAGE STYLES */
 
+.projectContentContainer {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
 .aboutProject {
   display: flex;
-  justify-content: center;
-  gap: 4em;
-  margin: 12.5em 0 7em 0;
+  justify-content: space-between;
+  gap: 5rem;
+  margin: 8rem 0 5rem 0;
+  width: 100%;
 }
 
 
 #project-display {
-  padding: 0em;
-  max-width: 500px;
+  flex: 3;
+  max-width: none; 
 }
-  
+
+
 #project-id {
   display: flex;
   font-size: 1.2rem;
@@ -333,6 +356,10 @@ ul {
 .projectTechnologies {
   display: flex;
   flex-direction: column;
+}
+
+.technologies {
+  color: var(--text-color-grey);
 }
 
 .technologyImages {
@@ -353,7 +380,8 @@ ul {
 .projectDetails {
   display: flex;
   flex-direction: column;
-  max-width: 20%;
+  flex: 2; 
+  max-width: none;
 }
 
 .projectLinkButton {
@@ -370,7 +398,6 @@ ul {
 
 .projectLinkButton:hover {
   border-bottom: 3px solid var(--text-color);
-
 }
 
 .projectAboutTitle {
@@ -384,40 +411,31 @@ ul {
 }
 
 
+/* Article */
+
+article {
+  width: 80%; 
+  margin: 0 0 5rem 0;
+  padding-left: 0;
+}
+
+
 /* buttom Navigation */
 
 .projectButtomNav {
   display: flex;
   justify-content: space-between;
   margin: 4em 0 0 0;
-  padding: 0 2em;
+  padding: 1em 2em;
   width: 100%;
   position: fixed;
-  bottom: -100px; 
+  bottom: 0; 
   left: 0;
   z-index: 1000;
-  transition: bottom 0.3s ease;
   background-color: var(--bg-color);
-  padding-bottom: 1em;
+  transition: background-color 0.5s;
 }
 
-.projectButtomNav.visible {
-  bottom: 60px; 
-}
-
-
-
-.previousBtn, .nextBtn {
-  border-bottom: solid 3px transparent;
-  font-size: 16px;
-  color: var(--bg-btn-sec);
-  cursor: pointer;
-  padding-bottom: 5px;
-}
-
-.previousBtn:hover, .nextBtn:hover {
-  border-bottom: solid 3px var(--bg-btn-sec);
-}
 
 .readcasestudyBtn {
   background-color: var(--bg-button-primary);
@@ -425,6 +443,11 @@ ul {
   border-radius: 24px;
   color: var(--text-button-primary);
   padding: 0 3em;
+  display: none;
+}
+
+.readcasestudyBtn.has-case-study {
+  display: block;
 }
 
   
@@ -432,8 +455,101 @@ ul {
 
 
 
+.key-insights {
+  margin: 0 0 1em 0;
+}
 
 
+
+/*  project navigation */
+
+
+.project-navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 8em 0 3em 0;
+  padding: 0 2em;
+}
+
+.project-navigation-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 2em;
+  letter-spacing: 0.05em;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2.5em;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.project-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  border: 1px solid var(--grid-color);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+}
+
+.project-card-image {
+  width: 100%;
+  height: 180px;
+  background-color: var(--grid-color);
+  object-fit: cover;
+}
+
+.project-card-content {
+  padding: 1.5em;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.project-card-id {
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 0.5em;
+  color: var(--text-color-grey);
+}
+
+.project-card-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 1em;
+}
+
+.project-card-link {
+  color: var(--text-color);
+  text-decoration: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+/* For current project indicator */
+.project-card.current {
+  border: 2px solid var(--bg-button-primary);
+}
+
+.project-card.current .project-card-id {
+  color: var(--bg-button-primary);
+}
 
 
 
@@ -545,65 +661,15 @@ ul {
   text-decoration: none;
 }
 
-
-
 .redirectIcon {
   width: 40px;
   height: 40px;
 }
 
-/* 
-.getInTouch {
-  text-decoration: none;
-  border: none;
-  border-radius: 24px;
-  background-color: var(--bg-button-primary);
-  color: var(--text-button-primary);
-  font-family: inherit;
-  padding: 0.5em 3em;
-  transition: all 0.3s ease;
-  cursor: pointer;
-} */
-/* 
-.getInTouch:hover {
-  background-color: var(--button-hover-bg);
-  color: var(--text-button-primary);
-} */
-
-/* .getInTouch {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.5em 3em;
-  background-color: var(--bg-button-primary);
-  color: var(--text-button-primary);
-  font-family: inherit;
-  font-size: 1em;
-  border: none;
-  cursor: pointer;
-  box-shadow: -6px 6px 0 var(--boxshadow-button);
-  transition: all 0.08s cubic-bezier(0.3, 0.7, 0.4, 1);
-  text-decoration: none;
-  width: fit-content;
-}
-
-
-.getInTouch:hover {
-  background-color:var(--button-hover-bg);
-  transform: translate(-1px, 1px);
-  box-shadow: -5px 5px 0 var(--boxshadow-button);
-}
-
-.getInTouch:active {
-  transform: translate(-6px, 6px);
-  box-shadow: 0px 0px 0 var(--boxshadow-button);
-} */
-
 .resumeWrapper {
   display: flex;
   align-items: center;
-  gap: 1em;
+  gap: 1em;`
   position: relative;
   padding-bottom: 0.5em;
 }
@@ -629,8 +695,6 @@ ul {
   text-decoration: none;
 }
 
-
-
 .resumeIcon {
   width: 24px;
   height: 24px;
@@ -641,8 +705,6 @@ resumeWrapper:hover .resumeIcon {
   transform: translateX(4px);
 }
 
-
-  
 .copyrightWrapper {
   display: flex;
   align-items: center;

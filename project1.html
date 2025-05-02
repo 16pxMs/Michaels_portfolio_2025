@@ -69,172 +69,174 @@
 
       </nav>
 
+      <section class="backBtnWrapper">
+        <button class="bckBtn"> Go back</button>
+      </section>
 
-      <div class="aboutProject">
+      <section class="projectContentContainer">
+        <div class="aboutProject">
 
-        <div id="project-display">
-          <h1>
-              <span id="project-id"></span>
-              <span id="project-title"></span>
-          </h1>
-          <div class="projectTechnologies">
-            <p class="technologies">Technologies</p>
-            <div class="technologyImages">
-              <img src="/Icons/Technologies/Figma.svg" alt="figma icon" class="figma techLogo"/>
+          <div id="project-display">
+            <h1>
+                <span id="project-id"></span>
+                <span id="project-title"></span>
+            </h1>
+            <div class="projectTechnologies">
+              <p class="technologies">Technologies</p>
+              <div class="technologyImages">
+                <img src="/Icons/Technologies/Figma.svg" alt="figma icon" class="figma techLogo"/>
+                
+                <img src="/Icons/Technologies/Google annalytics.svg" alt="Google Analytics" class="googleAnalytics techLogo" />
+              </div>
               
-              <img src="/Icons/Technologies/Google annalytics.svg" alt="Google Analytics" class="googleAnalytics techLogo" />
             </div>
-            
           </div>
+  
+  
+          <div class="projectDetails">
+            <h6 class="projectAboutTitle">About project</h6>
+            <p class="detailCopy">
+              Users were mistakenly sending money to wrong accounts in the Eversend app—costing the business thousands weekly. I led user interviews and flow analysis to uncover the root cause, then worked with the team to redesign the send-money flow, add validation checks, and fix a backend bug. The result: zero user errors, zero chargebacks, and a safer, smarter experience.
+              
+            </p>
+  
+            <!-- <div class="projectLinkButton">
+             <a href="" target="_blank" class="projectLink">drive.com</a>
+             <img src="/Icons/arrow_outward_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" class="redirectIcon" />
+            </div> -->
+          </div>
+        
+  
         </div>
-
-
-        <div class="projectDetails">
-          <h6 class="projectAboutTitle">About project</h6>
-          <p class="detailCopy">
-            This project focused on solving a critical issue in a fintech app where users were mistakenly sending money to the wrong bank accounts—costing the business thousands of dollars weekly in chargebacks. By identifying the root cause through user interviews and flow analysis, I worked with the team to redesign the send-money flow, implement necessary validation checks, and eliminate a backend API bug. The outcome? Zero customer errors, zero chargebacks from this issue, and a more thoughtful, error-resistant experience.
+  
+        <article>
+          <section>
+            <h2>Context</h2>
+            <p>Every week, 3 to 7 customers were mistakenly sending money to the wrong accounts using our multi-currency transfer platform. This wasn’t just a minor UX issue—it was costing the company thousands of dollars in chargebacks, lost funds, and hours of internal recovery work.</p>
+            <p>We needed to understand what was going wrong, why it was happening all of a sudden, and how we could fix it—fast.</p>
             
-          </p>
+          </section>
+        
+          <section>
+            <h2>Stakes</h2>
+            <p>The cost wasn’t just financial. The issue was:</p>
+            <ul>
+              <li>Eroding customer trust</li>
+              <li>Reducing transaction frequency, especially for users who had already experienced the error</li>
+              <li>Overloading support teams who spent hours trying to retrieve funds</li>
+              <li>Harming our reputation, especially in regions where trust in digital financial services is still fragile</li>
+            </ul>
+            <p>This wasn’t just a bug—it was a potential growth blocker.</p>
+        
+          </section>
+        
+          <section>
 
-          <!-- <div class="projectLinkButton">
-           <a href="" target="_blank" class="projectLink">drive.com</a>
-           <img src="/Icons/arrow_outward_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" class="redirectIcon" />
-          </div> -->
+            <h3>Investigating the Why</h3>
+            <p>I reached out to our customer support team to dig deeper:</p>
+            <ul>
+              <li>How often were errors happening?</li>
+              <li>Which countries or banks were most affected?</li>
+              <li>Was this isolated to new users or long-time customers?</li>
+            </ul>
+            <p>From there, I jumped into phone interviews with affected users (3–15 mins each), documenting exactly how they used the feature.</p>
+            
+            <figure>
+              <img src="/Project images/Chargebacks/research table.png" alt="Screenshots or notes from user interviews"
+              class="research ProjectImages">
+              <figcaption><small>Real calls with real users</small></figcaption>
+            </figure>
+        
+            <h4>Key insights:</h4>
+            <ul class="key-insights">
+              <li>Users only realized the mistake after the recipient flagged it.</li>
+              <li>Most errors happened during bank transfers.</li>
+              <li>A bug in the payouts API auto-switched “GT Bank” to a differet bank on the confirmation screen.</li>
+              <li>Most users were not new—meaning this wasn’t a learning issue.</li>
+              <li>They could clearly walk me through how they sent money—so the issue wasn’t usability, it was invisible friction.</li>
+            </ul>
+        
+            <h3>Redesigning the Flow</h3>
+            <p>Armed with evidence, I worked with the product and engineering teams to:</p>
+            <ul>
+              <li>Highlight the API bug causing bank name swaps</li>
+              <li>Redraw the entire “Send Money to Bank” flow</li>
+              <li>Identify where things were falling apart</li>
+            </ul>
+            
+            <figure>
+              <img src="/Project images/Chargebacks/Flow.png" alt="Redesigned user flow diagram" class="flowDiagram ProjectImages">
+              <figcaption>Revised transfer journey highlighting friction points.</figcaption>
+            </figure>
+        
+            <blockquote>
+              <p>Sometimes, clarity comes from zooming out. Mapping the full journey made the issue—and opportunity—obvious.</p>
+            </blockquote>
+        
+            <h3>Adding Better Checks</h3>
+            <p>Speed was hurting trust. We needed to slow users down just enough to keep them safe. I introduced:</p>
+            <ul>
+              <li>Review screens with clearer account + bank details</li>
+              <li>Confirmation modals asking users to double-check before submitting</li>
+              <li>Error states and catchpoints for known risky banks</li>
+            </ul>
+        
+            <figure>
+              <img src="/Project images/Chargebacks/visual 1.png" alt="UI mockups of confirmation and error handling screens" class="flowDiagram ProjectImages">
+              <figcaption>New review and confirmation screens to prevent transfer mistakes.</figcaption>
+            </figure>
+          </section>
+        
+          <section>
+            <h2>Outcome</h2>
+            <ul>
+              <li>❌ Chargebacks due to user error = 0</li>
+              <li>💸 No lost funds from sending errors</li>
+              <li>📉 Support tickets related to wrong transfers disappeared</li>
+              <li>💡 Internal teams now review flows with more attention to “too-smooth” paths that skip critical checks</li>
+            </ul>
+        
+            <figure>
+              <img src="mockups/outcomes-stats.png" alt="Before-and-after stats showing improvements">
+              <figcaption>Measured outcomes post-redesign.</figcaption>
+            </figure>
+          </section>
+        
+          <section>
+            <h2>Reflection</h2>
+            <p>This project taught me a key lesson:</p>
+            <blockquote>
+              <p>"Just because something is fast and simple doesn't mean it's safe."</p>
+            </blockquote>
+            <p>In UX, we're often told to reduce steps and simplify flows—but sometimes, the absence of friction is the very thing that causes errors.</p>
+            <p>By slowing users down strategically, we actually improved trust and performance.</p>
+        
+            <figure>
+              <img src="mockups/final-thought.png" alt="Illustration of balance between simplicity and safety in UX">
+              <figcaption>Balancing speed and safety in user experience design.</figcaption>
+            </figure>
+          </section>
+        </article>
+  
+
+      </section>
+      
+      <section class="project-navigation">
+        <h2 class="project-navigation-title">Explore More Projects</h2>
+        <div class="project-grid" id="project-grid">
+        
         </div>
-      
-
-      </div>
-
-      <article>
-        <section>
-          <h2>Context</h2>
-          <p>Every week, 3 to 7 customers were mistakenly sending money to the wrong accounts using our multi-currency transfer platform. This wasn’t just a minor UX issue—it was costing the company thousands of dollars in chargebacks, lost funds, and hours of internal recovery work.</p>
-          <p>We needed to understand what was going wrong, why it was happening all of a sudden, and how we could fix it—fast.</p>
-          
-          <figure>
-            <img src="mockups/context-diagram.png" alt="Flowchart or graph showing failed transfer patterns">
-            <figcaption>Illustration of the frequency and flow of misdirected transfers.</figcaption>
-          </figure>
-        </section>
-      
-        <section>
-          <h2>Stakes</h2>
-          <p>The cost wasn’t just financial. The issue was:</p>
-          <ul>
-            <li>Eroding customer trust</li>
-            <li>Reducing transaction frequency, especially for users who had already experienced the error</li>
-            <li>Overloading support teams who spent hours trying to retrieve funds</li>
-            <li>Harming our reputation, especially in regions where trust in digital financial services is still fragile</li>
-          </ul>
-          <p>This wasn’t just a bug—it was a potential growth blocker.</p>
-      
-        </section>
-      
-        <section>
-          <h2>Actions</h2>
-      
-          <h3>🔍 Investigating the Why</h3>
-          <p>I reached out to our customer support team to dig deeper:</p>
-          <ul>
-            <li>How often were errors happening?</li>
-            <li>Which countries or banks were most affected?</li>
-            <li>Was this isolated to new users or long-time customers?</li>
-          </ul>
-          <p>From there, I jumped into phone interviews with affected users (3–15 mins each), documenting exactly how they used the feature.</p>
-          
-          <figure>
-            <img src="/Project images/Chargebacks/research table.png" alt="Screenshots or notes from user interviews"
-            class="research ProjectImages">
-            <figcaption><small>Real calls with real users</small></figcaption>
-          </figure>
-      
-          <h4>Key insights:</h4>
-          <ul>
-            <li>Users only realized the mistake after the recipient flagged it.</li>
-            <li>Most errors happened during bank transfers.</li>
-            <li>A bug in the payouts API auto-switched “GC Bank” to “Polaris Bank” on the confirmation screen.</li>
-            <li>Most users were not new—meaning this wasn’t an onboarding issue.</li>
-            <li>They could clearly walk me through how they sent money—so the issue wasn’t usability, it was invisible friction.</li>
-          </ul>
-      
-          <h3>Redesigning the Flow</h3>
-          <p>Armed with evidence, I worked with the product and engineering teams to:</p>
-          <ul>
-            <li>Highlight the API bug causing bank name swaps</li>
-            <li>Redraw the entire “Send Money to Bank” flow</li>
-            <li>Identify where things were falling apart</li>
-          </ul>
-          
-          <figure>
-            <img src="/Project images/Chargebacks/Flow.png" alt="Redesigned user flow diagram" class="flowDiagram ProjectImages">
-            <figcaption>Revised transfer journey highlighting friction points.</figcaption>
-          </figure>
-      
-          <blockquote>
-            <p>Sometimes, clarity comes from zooming out. Mapping the full journey made the issue—and opportunity—obvious.</p>
-          </blockquote>
-      
-          <h3>Adding Better Checks</h3>
-          <p>Speed was hurting trust. We needed to slow users down just enough to keep them safe. I introduced:</p>
-          <ul>
-            <li>Review screens with clearer account + bank details</li>
-            <li>Confirmation modals asking users to double-check before submitting</li>
-            <li>Error states and catchpoints for known risky banks</li>
-          </ul>
-      
-          <figure>
-            <img src="/Project images/Chargebacks/visual 1.png" alt="UI mockups of confirmation and error handling screens" class="flowDiagram ProjectImages">
-            <figcaption>New review and confirmation screens to prevent transfer mistakes.</figcaption>
-          </figure>
-        </section>
-      
-        <section>
-          <h2>Outcome</h2>
-          <ul>
-            <li>❌ Chargebacks due to user error = 0</li>
-            <li>💸 No lost funds from sending errors</li>
-            <li>📉 Support tickets related to wrong transfers disappeared</li>
-            <li>💡 Internal teams now review flows with more attention to “too-smooth” paths that skip critical checks</li>
-          </ul>
-      
-          <figure>
-            <img src="mockups/outcomes-stats.png" alt="Before-and-after stats showing improvements">
-            <figcaption>Measured outcomes post-redesign.</figcaption>
-          </figure>
-        </section>
-      
-        <section>
-          <h2>Reflection</h2>
-          <p>This project taught me a key lesson:</p>
-          <blockquote>
-            <p>"Just because something is fast and simple doesn't mean it's safe."</p>
-          </blockquote>
-          <p>In UX, we're often told to reduce steps and simplify flows—but sometimes, the absence of friction is the very thing that causes errors.</p>
-          <p>By slowing users down strategically, we actually improved trust and performance.</p>
-      
-          <figure>
-            <img src="mockups/final-thought.png" alt="Illustration of balance between simplicity and safety in UX">
-            <figcaption>Balancing speed and safety in user experience design.</figcaption>
-          </figure>
-        </section>
-      </article>
+      </section>
 
      
       <!-- button page navigation -->
 
       <section class="projectButtomNav">
         
-        <span class="previousBtn">
-          PREVIOUS
-        </span>
-
         <button class="readcasestudyBtn">
           Read Casestudy
         </button>
-      
-        <span class="nextBtn">
-          NEXT
-        </span>
+
       </section>
 
         
@@ -259,13 +261,13 @@
 
             <div class="resumeWrapper">
               <a href="https://drive.google.com/uc?export=download&id=1uHDQ16A-S-M0Vs9ILMzFKjZ0tNRaa5qe" 
-              class="resume-button"
-              target="_blank"
-              onclick="setTimeout(()=>{window.location.href='https://drive.google.com/uc?export=download&id=1uHDQ16A-S-M0Vs9ILMzFKjZ0tNRaa5qe'}, 500); return false;">
-              Download Resume
+                 class="resume-button"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 onclick="setTimeout(() => { window.location.href = this.href }, 500); return false;">
+                Download Resume
               </a>
-
-              <img src="/Icons/Document.svg" class="resumeIcon"/> 
+              <img src="/Icons/Document.svg" class="resumeIcon" alt="Document icon"/> 
             </div>
             
           </div>
