@@ -66,6 +66,9 @@ document.addEventListener('DOMContentLoaded', function() {
       console.log("Case study button element not found in DOM");
     }
   }
+  
+
+  
 
   // Call the update function immediately
   updateProjectPageFromUrl();

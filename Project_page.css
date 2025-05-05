@@ -36,6 +36,7 @@
   --text-white: hsl(0, 0%, 100%);
   --text-color-eversend: hsl(243, 99%, 65%);
   --text-color-grey: hsl(0, 0%, 55%);
+  --text-color-black: hsl(0, 0%, 29%);
   --text-metrics: hsl(0, 0%, 29%);
   --text-brand: var(--brand-color);
 
@@ -78,6 +79,7 @@
   --text-white: hsl(0, 0%, 100%); 
   --text-color-eversend: hsl(243, 99%, 75%); 
   --text-color-grey: hsl(0, 0%, 70%);
+  --text-color-black: hsl(0, 0%, 100%);
   --text-metrics: hsl(0, 0%, 100%); 
   --text-brand: var(--brand-color);
 
@@ -293,27 +295,66 @@ ul {
 
 
 /* back button */
+
 .backBtnWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.25em;
   margin: 60px 0 0 0;
   padding: 0 2.5em;
   position: fixed;
   top: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
 }
 
-.bckBtn {
+.bckBtn, a {
   border: none;
-  padding: 0.5em 1em;
-  border-radius: 32px;
-  background-color: var(--bg-btn-sec);
-  color: var(--text-white);
-  transition: all 0.3sec ease;
+  padding: 0.5em 0;
+  color: var(--text-color-black);
+  text-decoration: none;
+  transition: width 0.4s ease-out;
   cursor: pointer;
+  position: relative;
+  transition: transform 0.4s ease-out;
   
 }
 
 .bckBtn:hover {
-  background-color: var(--btn-hover-sec);
+  transform: translateX(4px)
 }
+
+.backBtnWrapper::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--bg-btn-sec);
+  transition: width 0.4s ease-out;
+  z-index: 1;
+}
+
+.backBtnWrapper:hover::after {
+  width: fit-content;
+}
+
+.backBtnWrapper:hover .bckBtn {
+  transform: translateX(4px);
+}
+
+.backIcon {
+  transition: transform 0.4s ease-out;
+}
+
+.backBtnWrapper:hover .backIcon {
+  transform: translateX(-4px);
+}
+
+
+
 
 
 /*  PROJECT PAGE STYLES */
@@ -328,7 +369,7 @@ ul {
   display: flex;
   justify-content: space-between;
   gap: 5rem;
-  margin: 8rem 0 5rem 0;
+  margin: 2`rem 0 5rem 0;
   width: 100%;
 }
 
@@ -669,7 +710,7 @@ article {
 .resumeWrapper {
   display: flex;
   align-items: center;
-  gap: 1em;`
+  gap: 1em;
   position: relative;
   padding-bottom: 0.5em;
 }
@@ -715,4 +756,32 @@ resumeWrapper:hover .resumeIcon {
 
 .footerCopyright {
   font-size: 0.875em;
+}
+
+
+
+/* Explore More Section */
+.explore-more {
+  padding: 80px 20px;
+  background: var(--bg-color);
+}
+
+.explore-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 40px auto 0;
+}
+
+.explore-thumb {
+  height: 150px;
+  border-radius: 8px;
+  background-size: cover;
+  background-position: center;
+  transition: all 0.3s var(--ease-out-expo);
+}
+
+.explore-thumb:hover {
+  transform: scale(1.03);
 }

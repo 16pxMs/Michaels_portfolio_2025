@@ -6,8 +6,8 @@ var projectList = [
     },
 
     { id: "002", 
-      title: "hlhalhlhhlahlhg",
-      file:"",
+      title: "From Drop-Offs to Activation: How Smart UX Tripled User Conversion",
+      file:"project2.html",
       caseStudy: ""
 
     },
