@@ -164,12 +164,25 @@ li {
   margin: 0;
 }
 
-
+.sectionContainer, .listContainer {
+  margin: 0 0 2em 0;
+}
 
 p {
   color: var(--text-color);
+  margin: 0 0 1.5em 0;
 }
 
+figure {
+  margin: 0;
+} 
+
+
+figcaption {
+  font-style: italic;
+  color: var(--text-color-grey);
+  margin: 0 0 2em 0;
+}
 
 /* Top navigation */
  
@@ -369,7 +382,7 @@ ul {
   display: flex;
   justify-content: space-between;
   gap: 5rem;
-  margin: 2`rem 0 5rem 0;
+  margin: 2rem 0 5rem 0;
   width: 100%;
 }
 
@@ -447,10 +460,19 @@ ul {
 
 
 .ProjectImages {
+  width: 100%;
+  height: auto;
+}
+
+.kycSolution {
   width: 800px;
   height: auto;
 }
 
+.analysisKYCscreen {
+  width: 800px;
+  height: auto;
+}
 
 /* Article */
 
@@ -591,8 +613,6 @@ article {
 .project-card.current .project-card-id {
   color: var(--bg-button-primary);
 }
-
-
 
 
 
