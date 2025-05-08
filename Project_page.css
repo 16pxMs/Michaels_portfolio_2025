@@ -206,8 +206,15 @@ nav {
   align-items: center;
   width: 100%;
   margin: 0;
+  position: relative;
 }
 
+.theme-btn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
 
 ul {
   margin: 0;
@@ -217,14 +224,15 @@ ul {
 
 .Mslogo {
   list-style-type: none;
+  margin-right: auto;
 }
 
 /* socail icons */
 
 .socials {
   display: flex;
-  flex-direction: row; 
   align-items: center;
+  margin-left: auto;
 }
 
 .social-links {
@@ -313,10 +321,10 @@ ul {
   display: flex;
   align-items: center;
   gap: 0.25em;
-  margin: 60px 0 0 0;
+  margin: 0;
   padding: 0 2.5em;
   position: fixed;
-  top: 5px;
+  top: 60px;
   text-decoration: none;
   cursor: pointer;
   position: relative;
@@ -722,9 +730,14 @@ article {
   text-decoration: none;
 }
 
+.getInTouchWrapper:hover .redirectIcon  {
+  transform: translateX(4px);
+}
+
 .redirectIcon {
   width: 40px;
   height: 40px;
+  transition: transform 0.4s ease-out;
 }
 
 .resumeWrapper {
@@ -762,7 +775,7 @@ article {
   transition: transform 0.4s ease-out;
 }
 
-resumeWrapper:hover .resumeIcon {
+.resumeWrapper:hover .resumeIcon {`
   transform: translateX(4px);
 }
 

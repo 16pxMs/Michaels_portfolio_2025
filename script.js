@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // create a link
     if (project.file) {
       link.href = `${project.file}?id=${encodeURIComponent(project.id)}`
-      link.target = "_"
+      link.target = "_parent"
       } else {
       link.href = "#"
     }
