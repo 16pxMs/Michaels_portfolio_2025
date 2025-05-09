@@ -775,7 +775,7 @@ article {
   transition: transform 0.4s ease-out;
 }
 
-.resumeWrapper:hover .resumeIcon {`
+.resumeWrapper:hover .resumeIcon {
   transform: translateX(4px);
 }
 
