@@ -12,8 +12,7 @@
 
     <link rel="manifest" href="/site.webmanifest">
 
-    <link rel="stylesheet" href="Project_page.css" />
-    <link rel="stylesheet" href="F_project.css" />
+    <link rel="stylesheet" href="gallery_project.css" />
     <link rel="stylesheet" href="animation.css"/>
 
 
@@ -37,6 +36,7 @@
             </label>
 
           <div class="socials">
+
             <!-- social links  -->
             <div class="social-links">
               
@@ -101,7 +101,6 @@
           <div class="projectDetails">
             <h6 class="projectAboutTitle">About project</h6>
             <p class="detailCopy">
-              Users were mistakenly sending money to wrong accounts in the Eversend app—costing the business thousands weekly. I led user interviews and flow analysis to uncover the root cause, then worked with the team to redesign the send-money flow, add validation checks, and fix a backend bug. The result: zero user errors, zero chargebacks, and a safer, smarter experience.
               
             </p>
   
@@ -113,22 +112,34 @@
         
   
         </div>
-  
-        
-    
-
-     
-      <!-- button page navigation -->
-
-      <section class="projectButtomNav">
-        
-        <button class="readcasestudyBtn">
-          Read Casestudy
-        </button>
-
       </section>
-      
+
+
+
+      <section class="project-gallery-section">
+        <div id="project-gallery-container" class="carousel-container">
+          <button class="carousel-button prev" aria-label="Previous image">
+            <img src="/Icons/BackArrow.svg" alt="Previous">
+          </button>
+          
+          <div class="carousel-track-container">
+            <div class="carousel-track"></div>
+          </div>
+          
+          <button class="carousel-button next" aria-label="Next image">
+            <img src="/Icons/ForwardArrow.svg" alt="Next">
+          </button>
+        </div>
         
+        <!-- Thumbnail preview container -->
+        <div class="thumbnail-preview-container">
+          <div class="thumbnail-track"></div>
+        </div>
+      </section>`
+
+
+
+
       <footer class="footer">
 
         <div class="footerConversionWrapper">
@@ -166,19 +177,28 @@
           
           <img class="footerImage" src="/Icons/Michael_Footer_Img.svg">
   
-          <p class="footerCopyright"> ©ms 2025 </p>
+          <p class="footerCopyright"> built by me ©ms 2025 </p>
         </div>
        
 
       </footer>
 
   
+        
+     
+  
+
+        
+      
+  
 
 
     </main>
     <script src="project_data.js"></script>
     <script src="projects.js"></script>
+    <script src="projectGallery.js"></script>
     <script src="animation.js"></script>
+   
       
 </body>
 </html>

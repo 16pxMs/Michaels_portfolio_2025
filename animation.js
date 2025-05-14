@@ -35,11 +35,4 @@ if (!savedTheme) {
   }
 }
 
-// Initialize animations
-document.addEventListener('DOMContentLoaded', function() {
- // Only setup transitions on the main page
- if (document.getElementById('works')) {
-    setupProjectTransitions();
-  }
-});
 

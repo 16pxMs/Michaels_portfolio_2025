@@ -81,13 +81,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   })
 
-  let otherProject = document.querySelector('.project-card')
-
-  otherProject.addEventListener ('click', function() {
-
-  })
-  
-
 })
 
 
