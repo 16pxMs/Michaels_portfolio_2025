@@ -572,6 +572,7 @@ label span {
   flex-direction: column;
   gap: 2em;
   width: 100%; 
+  
 }
 
 .projectLink {
@@ -597,18 +598,13 @@ label span {
   height: 3px;
   background-color: var(--border-text);
   transition: width 0.4s ease-out;
-  z-index: 1;
 }
 
-/* .projectLink:hover {
-  border-bottom: solid 3px var(--border-text);
-  color: var(--text-color);
-  transform: translateY(-2px);
-} */
 
 .projectLink:hover {
   color: var(--text-color);
   transform: translateY(-2px);
+  z-index: 100;
 }
 
 .projectLink:hover::before {
@@ -624,9 +620,9 @@ label span {
   width: 350px;
   height: 350px;
   opacity: 0;
-  transition: opacity 0.3s ease, right 0.3s ease;
+  transition: opacity 0.3s ease, right 0.1`s ease;
   pointer-events: none;
-  z-index: 10;
+  z-index: 1;
   border-radius: 4px;
   overflow: hidden;
   box-shadow: 0 4px 8px hsla(0,0%,0%,0.2);
@@ -635,7 +631,7 @@ label span {
 }
 
 .projectLink:hover::after {
-  opacity: 1;
+  opacity: 3;
   right: -120px;
 }
 
