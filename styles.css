@@ -687,7 +687,12 @@ label span {
   position: relative;
   margin-bottom: 1em;
   cursor: pointer;
+  transition: transform 0.3s ease;
 }
+
+.project-card:hover {
+  transform: translateX(4px);
+} 
 
 .project-image {
   width: 100%;

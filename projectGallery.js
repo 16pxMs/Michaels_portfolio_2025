@@ -6,9 +6,15 @@ const projectGalleryData = [
         description: "A comprehensive UX/UI redesign that increased conversion rates and streamlined user experience for a fintech mobile application.",
         thumbnail:"/pexels-alina-chernii-682289345-31414924.jpg",
         galleryImages: [
-            "/pexels-alina-chernii-682289345-31414924.jpg",
-            "/Images/eversend-gallery-2.jpg",
-            "/Images/eversend-gallery-3.jpg"
+            {
+                src: "/pexels-alina-chernii-682289345-31414924.jpg",
+                description: "Home screen redesign showing new navigation structure"
+            },
+           
+            {
+                src: "/pexels-alina-chernii-682289345-31414924.jpg",
+                description: "Home screen redesign showing new navigation structure"
+            }
         ]
     },
     {
@@ -17,83 +23,126 @@ const projectGalleryData = [
         description: "Developed a scalable design system that improved development efficiency and maintained visual consistency across multiple platforms.",
         thumbnail:"/pexels-alina-chernii-682289345-31414924.jpg",
         galleryImages: [
-            "/Images/design-system-gallery-1.jpg",
-            "/Images/design-system-gallery-2.jpg"
+            {
+                src: "/pexels-alina-chernii-682289345-31414924.jpg",
+                description: "Home screen redesign showing new navigation structure"
+            },
+           
+            
+            {
+                src: "/pexels-alina-chernii-682289345-31414924.jpg",
+                description: "Home screen redesign showing new navigation structure"
+            }
         ]
     },
+
     {
         id: "project3",
         title: "KYC Flow Optimization",
         description: "Redesigned the Know Your Customer (KYC) flow to reduce friction and increase user onboarding completion rates.",
         thumbnail:"/pexels-alina-chernii-682289345-31414924.jpg",
         galleryImages: [
-            "/Images/kyc-gallery-1.jpg",
-            "/Images/kyc-gallery-2.jpg",
-            "/Images/kyc-gallery-3.jpg"
+            {
+                src: "/pexels-alina-chernii-682289345-31414924.jpg",
+                description: "Home screen redesign showing new navigation structure"
+            },
+           
+            
+
+            {
+                src: "/pexels-alina-chernii-682289345-31414924.jpg",
+                description: "Home screen redesign showing new navigation structure"
+            }
         ]
     },
+
     {
         id: "project4",
         title: "App Store Conversion Boost",
-        thumbnail:"/pexels-alina-chernii-682289345-31414924.jpg",
         description: "Strategically redesigned App Store and Google Play screenshots to dramatically improve app store conversion rates.",
+        thumbnail:"/pexels-alina-chernii-682289345-31414924.jpg",
         galleryImages: [
-            "/Images/app-store-gallery-1.jpg",
-            "/Images/app-store-gallery-2.jpg"
+            {
+                src: "/pexels-alina-chernii-682289345-31414924.jpg",
+                description: "Home screen redesign showing new navigation structure"
+            },
+           
+            {
+                src: "/pexels-alina-chernii-682289345-31414924.jpg",
+                description: "Home screen redesign showing new navigation structure"
+            },
+
+            {
+                src: "/pexels-alina-chernii-682289345-31414924.jpg",
+                description: "Home screen redesign showing new navigation structure"
+            }
         ]
     }
 ];
 
-// Project Gallery Page Creation with Thumbnail Preview
 function createProjectGalleryPage(projectId) {
     const project = projectGalleryData.find(p => p.id === projectId);
     if (!project) return;
-  
-    // Update page content
+
+    // Update main project info
     document.getElementById('project-title').textContent = project.title;
     document.querySelector('.detailCopy').textContent = project.description;
-  
+
+    // Get DOM elements
     const carouselTrack = document.querySelector('.carousel-track');
     const thumbnailTrack = document.querySelector('.thumbnail-track');
+    const thumbnailContainer = document.querySelector('.thumbnail-preview-container');
+
+    // Check if description container already exists
+    let descriptionContainer = document.querySelector('.image-description-container');
     
-    // Clear any existing content
+    // Only create if it doesn't exist
+    if (!descriptionContainer) {
+        descriptionContainer = document.createElement('div');
+        descriptionContainer.className = 'image-description-container';
+        const descriptionText = document.createElement('p');
+        descriptionText.className = 'current-image-description';
+        descriptionContainer.appendChild(descriptionText);
+        
+        // Insert description above thumbnails
+        thumbnailContainer.parentNode.insertBefore(descriptionContainer, thumbnailContainer);
+    }
+
+    // Clear existing content
     carouselTrack.innerHTML = '';
     thumbnailTrack.innerHTML = '';
-    
-    // Create carousel slides and thumbnails
-    project.galleryImages.forEach((src, index) => {
-        // Create main slide
+
+    // Create slides and thumbnails
+    project.galleryImages.forEach((imageData, index) => {
+        // Main carousel slide
         const slide = document.createElement('div');
         slide.className = 'carousel-slide';
         slide.dataset.index = index;
-        
+        slide.dataset.description = imageData.description;
+
         const img = document.createElement('img');
         img.className = 'carousel-image';
-        img.src = src;
-        img.alt = `${project.title} gallery image ${index + 1}`;
+        img.src = imageData.src;
+        img.alt = `${project.title} - Image ${index + 1}`;
         slide.appendChild(img);
         carouselTrack.appendChild(slide);
-        
-        // Create thumbnail preview
+
+        // Thumbnail item
         const thumbnail = document.createElement('div');
         thumbnail.className = 'thumbnail-item';
         thumbnail.dataset.index = index;
-        
+
         const thumbImg = document.createElement('img');
-        thumbImg.src = src;
-        thumbImg.alt = `Thumbnail ${index + 1}`;
+        thumbImg.src = imageData.src;
+        thumbImg.alt = `${project.title} thumbnail ${index + 1}`;
         thumbnail.appendChild(thumbImg);
         thumbnailTrack.appendChild(thumbnail);
-        
-        // Click handler for thumbnails
-        thumbnail.addEventListener('click', () => {
-            moveToSlide(index);
-        });
     });
-    
-    // Initialize carousel functionality
+
+    // Initialize carousel
     setupCarousel();
 }
+
 
 function setupCarousel() {
     const track = document.querySelector('.carousel-track');
@@ -101,11 +150,12 @@ function setupCarousel() {
     const thumbnails = Array.from(document.querySelectorAll('.thumbnail-item'));
     const nextButton = document.querySelector('.carousel-button.next');
     const prevButton = document.querySelector('.carousel-button.prev');
+    const descriptionText = document.querySelector('.current-image-description');
     
     let currentSlide = 0;
     const slideCount = slides.length;
     
-    if (slideCount === 0) return; // Exit if no slides
+    if (slideCount === 0) return;
     
     // Set initial positions
     const slideWidth = slides[0].getBoundingClientRect().width;
@@ -124,10 +174,15 @@ function setupCarousel() {
             thumbnails[currentSlide].classList.add('active');
         }
         
+        // Update image description if element exists
+        if (descriptionText) {
+            descriptionText.textContent = slides[currentSlide].dataset.description;
+        }
+
         // Center the active thumbnail
         centerThumbnail(index);
     };
-    
+        
     // Center the active thumbnail in the preview track
     const updateActiveThumbnail = (index) => {
         thumbnails.forEach(thumb => thumb.classList.remove('active'));

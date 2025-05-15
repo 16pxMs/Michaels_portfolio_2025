@@ -581,6 +581,27 @@ ul {
 
 /* Thumbnail Preview Styles */
 
+.image-description-container {
+  max-width: 800px;
+  margin: 25px auto 15px;
+  padding: 0 20px;
+  text-align: center;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.current-image-description {
+  color: var(--text-color);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
+  font-weight: 400;
+}
+
 .thumbnail-preview-container {
   width: 100%;
   max-width: 800px;
