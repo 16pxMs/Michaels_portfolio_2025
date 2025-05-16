@@ -17,11 +17,12 @@ const projectGalleryData = [
             }
         ]
     },
+
     {
         id: "project2",
         title: "Designed Influencer Marketing Web App, – Boosted Retention Leading to $50M Acquisition",
         description: "Developed a scalable design system that improved development efficiency and maintained visual consistency across multiple platforms.",
-        thumbnail:"/featured_projects/Amped/Amped_cover.png`",
+        thumbnail:"/featured_projects/Amped/Amped_cover.png",
         galleryImages: [
             {
                 src: "/pexels-alina-chernii-682289345-31414924.jpg",
