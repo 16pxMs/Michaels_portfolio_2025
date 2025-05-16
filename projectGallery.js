@@ -2,9 +2,9 @@
 const projectGalleryData = [
     {
         id: "project1",
-        title: "Eversend App Redesign",
+        title: "UX/UI-Designed Aviation Training Portal for Student Pilots & Instructors",
         description: "A comprehensive UX/UI redesign that increased conversion rates and streamlined user experience for a fintech mobile application.",
-        thumbnail:"/pexels-alina-chernii-682289345-31414924.jpg",
+        thumbnail:"/featured_projects/Certifly/Certifly_cover.png",
         galleryImages: [
             {
                 src: "/pexels-alina-chernii-682289345-31414924.jpg",
@@ -19,9 +19,9 @@ const projectGalleryData = [
     },
     {
         id: "project2",
-        title: "Design System Creation",
+        title: "Designed Influencer Marketing Web App, – Boosted Retention Leading to $50M Acquisition",
         description: "Developed a scalable design system that improved development efficiency and maintained visual consistency across multiple platforms.",
-        thumbnail:"/pexels-alina-chernii-682289345-31414924.jpg",
+        thumbnail:"/featured_projects/Amped/Amped_cover.png`",
         galleryImages: [
             {
                 src: "/pexels-alina-chernii-682289345-31414924.jpg",
