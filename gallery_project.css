@@ -540,7 +540,7 @@ ul {
 }
 .carousel-track-container {
   overflow: visible;
-  width: 100vw;
+  width: 100%;
 }
 
 .carousel-track {

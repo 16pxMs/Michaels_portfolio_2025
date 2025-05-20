@@ -54,10 +54,36 @@ const projectGalleryData = [
             },
 
             {
-                src: "/Featured_projects/Certifly/Trainer_Dashboard_Active.png`"
+                src: "/Featured_projects/Certifly/Trainer_Dashboard_Active.png"
                 ,
                 description: "Student view: This beta lets students search for pilot trainers, but with few available, most already know who they want to train with."
-            }
+            },
+
+
+            {
+                src: "/Featured_projects/Certifly/Tr_Course.png"
+                ,
+                description: "Student view: This beta lets students search for pilot trainers, but with few available, most already know who they want to train with."
+            },
+
+            {
+                src: "/Featured_projects/Certifly/Tr_Course_Create_course.png"
+                ,
+                description: "Student view: This beta lets students search for pilot trainers, but with few available, most already know who they want to train with."
+            },
+
+            {
+                src: "/Featured_projects/Certifly/Trainer_Training_Multiple.png"
+                ,
+                description: "Student view: This beta lets students search for pilot trainers, but with few available, most already know who they want to train with."
+            },
+
+
+            {
+                src: "/Featured_projects/Certifly/Trainer_Wallet.png"
+                ,
+                description: "Student view: This beta lets students search for pilot trainers, but with few available, most already know who they want to train with."
+            },
         ]
     },
 
