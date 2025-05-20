@@ -12,23 +12,6 @@ var projectList = [
 
     },
     
-    { id: "003", 
-      title: "",
-      file:"",
-      caseStudy: ""
-    },
-
-    { id: "004", 
-      title: "",
-      file:"",
-      caseStudy: ""
-    },
-
-
-    { id: "005", 
-      title: "",
-      file:"",
-      caseStudy: ""
-    }
+   
         
 ]    
