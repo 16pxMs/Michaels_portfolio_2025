@@ -9,80 +9,84 @@ const projectGalleryData = [
         galleryImages: [
             {
                 src: "/Featured_projects/Certifly/Sign_up.png",
-                description: "Home screen redesign showing new navigation structure"
-            },
-           
-            {
-                src: "/Featured_projects/Certifly/Dashboard_Active_dashboard.png",
-                description: "Home screen redesign showing new navigation structure"
-            },
-
-            {
-                src: "/Featured_projects/Certifly/St_Trainer_Trainer_details.png"
-                ,
-                description: "Student view: This beta lets students search for pilot trainers, but with few available, most already know who they want to train with."
-            },
-
-            {
-                src: "/Featured_projects/Certifly/St_Trainer_filter_result.png"
-                ,
-                description: "Student view: This beta lets students search for pilot trainers, but with few available, most already know who they want to train with."
-            },
-
-            {
-                src: "/Featured_projects/Certifly/St_Dashboard_Trainer_detail_Aircraft.png"
-                ,
-                description: "Student view: This beta lets students search for pilot trainers, but with few available, most already know who they want to train with."
+                description: "Sign up: Select user profile"
             },
 
             {
                 src: "/Featured_projects/Certifly/Student_Dashboard_onboard 1.png"
                 ,
-                description: "Student view: This beta lets students search for pilot trainers, but with few available, most already know who they want to train with."
+                description: "Student view: onboarding"
             },
+           
+            {
+                src: "/Featured_projects/Certifly/Dashboard_Active_dashboard.png",
+                description: "Student view: Student active dashboard."
+            },
+
+            {
+                src: "/Featured_projects/Certifly/St_Trainer_filter_result.png"
+                ,
+                description: "Student view: Result of filtered trainers."
+            },
+
+            {
+                src: "/Featured_projects/Certifly/St_Trainer_Trainer_details.png"
+                ,
+                description: "Student view: booking a trainer"
+            },
+
+            
+
+            {
+                src: "/Featured_projects/Certifly/St_Dashboard_Trainer_detail_Aircraft.png"
+                ,
+                description: "Student view: booking trainer."
+            },
+
+            
 
             {
                 src: "/Featured_projects/Certifly/Student_Messaging_Active.png"
                 ,
-                description: "Student view: This beta lets students search for pilot trainers, but with few available, most already know who they want to train with."
+                description: "Student view: messaging"
             },
 
             {
                 src: "/Featured_projects/Certifly/Student_Messaging_Search_No results.png"
                 ,
-                description: "Student view: This beta lets students search for pilot trainers, but with few available, most already know who they want to train with."
+                description: "Student view: messaging - search"
             },
 
             {
                 src: "/Featured_projects/Certifly/Trainer_Dashboard_Active.png"
                 ,
-                description: "Student view: This beta lets students search for pilot trainers, but with few available, most already know who they want to train with."
+                description: "Trainer view: Trainer active dashboard."
             },
 
 
             {
                 src: "/Featured_projects/Certifly/Tr_Course.png"
                 ,
-                description: "Student view: This beta lets students search for pilot trainers, but with few available, most already know who they want to train with."
+                description: "Trainer view: Trainer active dashboard."
             },
 
             {
                 src: "/Featured_projects/Certifly/Tr_Course_Create_course.png"
                 ,
-                description: "Student view: This beta lets students search for pilot trainers, but with few available, most already know who they want to train with."
+                description: "Trainer view: Trainer active dashboard."
             },
 
             {
                 src: "/Featured_projects/Certifly/Trainer_Training_Multiple.png"
                 ,
-                description: "Student view: This beta lets students search for pilot trainers, but with few available, most already know who they want to train with."
+                description: "Trainer view: Trainer active dashboard."
             },
 
 
             {
                 src: "/Featured_projects/Certifly/Trainer_Wallet.png"
                 ,
-                description: "Student view: This beta lets students search for pilot trainers, but with few available, most already know who they want to train with."
+                description: "Trainer view: Trainer active dashboard."
             },
         ]
     },
@@ -94,15 +98,109 @@ const projectGalleryData = [
         thumbnail:"/featured_projects/Amped/Amped_cover.png",
         galleryImages: [
             {
-                src: "/pexels-alina-chernii-682289345-31414924.jpg",
-                description: "Home screen redesign showing new navigation structure"
+                src: "/Featured_projects/Amped/Login.png",
+                description:''
             },
            
+            {
+                src: "/Featured_projects/Amped/Login_forgotpassword.png",
+                description: ""
+            },
+
+            {
+                src: "/Featured_projects/Amped/Flow.png",
+                description: ""
+            },
+
+            {
+                src: "/Featured_projects/Amped/Dashboard - Active.png",
+                description: ""
+            },
+
+            {
+                src: "/Featured_projects/Amped/Dashboard - Active.png",
+                description: ""
+            },
+
+            {
+                src: "/Featured_projects/Amped/onboarding.png",
+                description: ""
+            },
+
+            {
+                src: "/Featured_projects/Amped/onboarding_logo_uploaded.png",
+                description: ""
+            },
+
+            {
+                src: "/Featured_projects/Amped/onboarding_dashboard_theme.png",
+                description: ""
+            },
+
+
+            {
+                src: "/Featured_projects/Amped/Dashboard - Active.png",
+                description: ""
+            },
             
             {
-                src: "/pexels-alina-chernii-682289345-31414924.jpg",
-                description: "Home screen redesign showing new navigation structure"
-            }
+                src: "/Featured_projects/Amped/Dashboard_ActiveQuest.png",
+                description: ""
+            },
+
+            {
+                src: "/Featured_projects/Amped/Ambassadors_Active.png",
+                description: ""
+            },
+
+            {
+                src: "/Featured_projects/Amped/Ambassador_Profile_active_product quest.png",
+                description: ""
+            },
+
+            {
+                src: "/Featured_projects/Amped/Ambassador_Delete_profile.png",
+                description: ""
+            },
+
+            {
+                src: "/Featured_projects/Amped/Quest_dashboard.png",
+                description: ""
+            },
+
+            {
+                src: "/Featured_projects/Amped/Quest_dashboard_overview.png",
+                description: ""
+            },
+
+            {
+                src: "/Featured_projects/Amped/QUEST_1.png",
+                description: ""
+            },
+
+            {
+                src: "/Featured_projects/Amped/Quest_2.png",
+                description: ""
+            },
+
+            {
+                src: "/Featured_projects/Amped/Settings.png",
+                description: ""
+            },
+
+            {
+                src: "/Featured_projects/Amped/Settings_permissions.png",
+                description: ""
+            },
+
+            {
+                src: "/Featured_projects/Amped/Settings_sendInvite.png",
+                description: ""
+            },
+
+            
+
+            
         ]
     },
 
@@ -174,6 +272,7 @@ function createProjectGalleryPage(projectId) {
     if (!descriptionContainer) {
         descriptionContainer = document.createElement('div');
         descriptionContainer.className = 'image-description-container';
+        
         const descriptionText = document.createElement('p');
         descriptionText.className = 'current-image-description';
         descriptionContainer.appendChild(descriptionText);
