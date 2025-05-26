@@ -94,7 +94,7 @@ const projectGalleryData = [
     {
         id: "project2",
         title: "Designed Influencer Marketing Web App, – Boosted Retention Leading to $50M Acquisition",
-        description: "Developed a scalable design system that improved development efficiency and maintained visual consistency across multiple platforms.",
+        // description: "Developed a scalable design system that improved development efficiency and maintained visual consistency across multiple platforms.",
         thumbnail:"/featured_projects/Amped/Amped_cover.png",
         galleryImages: [
             {
@@ -109,16 +109,6 @@ const projectGalleryData = [
 
             {
                 src: "/Featured_projects/Amped/Flow.png",
-                description: ""
-            },
-
-            {
-                src: "/Featured_projects/Amped/Dashboard - Active.png",
-                description: ""
-            },
-
-            {
-                src: "/Featured_projects/Amped/Dashboard - Active.png",
                 description: ""
             },
 
@@ -206,21 +196,40 @@ const projectGalleryData = [
 
     {
         id: "project3",
-        title: "KYC Flow Optimization",
-        description: "Redesigned the Know Your Customer (KYC) flow to reduce friction and increase user onboarding completion rates.",
-        thumbnail:"/pexels-alina-chernii-682289345-31414924.jpg",
+        title: "Launching Web3: A Token Platform’s First Landing Page",
+        description: "Designed a responsive landing page for [$tech improving]’s inaugural Web3 token launch, targeting crypto enthusiasts and traders. As the UI/UX designer, I led the end-to-end design process—from wireframing to high-fidelity prototypes ensuring an intuitive, visually compelling experience that aligned with the platform’s innovative ethos. The final design streamlined user engagement, contributing to a successful token launch and establishing a strong digital presence for the brand. Clean, modern aesthetics and clear CTAs drove conversions while reinforcing trust in the new platform.",
+        thumbnail:"/Featured_projects/Tech/cover_temp.png",
+         liveLink: "https://www.techimproving.com/",
         galleryImages: [
             {
-                src: "/pexels-alina-chernii-682289345-31414924.jpg",
-                description: "Home screen redesign showing new navigation structure"
+                src: "/Featured_projects/Tech/Tech_Landing_page.png",
+                description: ""
             },
            
-            
+            {
+                src: "/Featured_projects/Tech/buy modal.png",
+                description: ""
+            },
 
             {
-                src: "/pexels-alina-chernii-682289345-31414924.jpg",
-                description: "Home screen redesign showing new navigation structure"
-            }
+                src: "/Featured_projects/Tech/Wut iz modal.png",
+                description: ""
+            },
+
+            {
+                src: "/Featured_projects/Tech/Mobile.png",
+                description: ""
+            },
+
+            {
+                src: "/Featured_projects/Tech/Mobile_2.png",
+                description: ""
+            },
+
+            {
+                src: "/Featured_projects/Tech/Mobile_3.png",
+                description: ""
+            },
         ]
     },
 
@@ -238,7 +247,7 @@ function createProjectGalleryPage(projectId) {
         // Check if we already have a link button (for page refreshes)
         let existingButton = document.querySelector('.live-project-link');
         if (existingButton) {
-            existingButton.remove(); // Remove existing button if it exists
+            existingButton.remove(); 
         }
         
         // Create the link container div

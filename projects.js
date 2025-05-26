@@ -43,33 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
       console.log("Project title not found or element missing");
     }
     
-    // Handle case study button visibility - MOVED INSIDE THE FUNCTION
-    if (readCaseStudyBtn) {
-      console.log("Case study button found in DOM");
-      
-      if (projectData && projectData.caseStudy) {
-        // If the project has a case study, show the button and set its link
-        readCaseStudyBtn.classList.add('has-case-study');
-        
-        // If the button is an anchor tag (<a>), set its href
-        if (readCaseStudyBtn.tagName === 'A') {
-          readCaseStudyBtn.href = projectData.caseStudy;
-        }
-        
-        console.log("Case study button enabled for project:", projectId);
-      } else {
-        // If no case study, ensure button is hidden
-        readCaseStudyBtn.classList.remove('has-case-study');
-        console.log("No case study available for project:", projectId);
-      }
-    } else {
-      console.log("Case study button element not found in DOM");
-    }
   }
-  
 
-  
-
-  // Call the update function immediately
   updateProjectPageFromUrl();
 });

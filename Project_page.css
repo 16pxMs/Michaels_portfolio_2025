@@ -164,6 +164,13 @@ li {
   margin: 0;
 }
 
+/* 
+.big,
+.mid,
+.sm {
+  margin-bottom: 0;
+}  */
+
 .sectionContainer, .listContainer {
   margin: 0 0 2em 0;
 }
@@ -184,6 +191,19 @@ figcaption {
   margin: 0 0 2em 0;
 }
 
+blockquote {
+  background-color: var(--bg-badge);
+  border-left: 2px solid var(--bg-button-primary);
+  width: 100%;
+  padding: 1em 2em;
+  margin: 2em 0;
+
+}
+
+blockquote > p {
+  font-style: italic;
+  margin: 0;
+} 
 /* Top navigation */
  
 nav {
@@ -490,7 +510,15 @@ article {
   padding-left: 0;
 }
 
+.casestudyTitle {
+  color: var(--text-color);
+  margin: 0 0 1.2em;
 
+}
+
+.articleBlock {
+  margin: 0 0 2.5em 0;
+}
   
 
 
@@ -762,29 +790,3 @@ article {
 }
 
 
-
-/* Explore More Section */
-.explore-more {
-  padding: 80px 20px;
-  background: var(--bg-color);
-}
-
-.explore-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 20px;
-  max-width: 1200px;
-  margin: 40px auto 0;
-}
-
-.explore-thumb {
-  height: 150px;
-  border-radius: 8px;
-  background-size: cover;
-  background-position: center;
-  transition: all 0.3s var(--ease-out-expo);
-}
-
-.explore-thumb:hover {
-  transform: scale(1.03);
-}
