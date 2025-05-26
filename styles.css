@@ -638,11 +638,11 @@ label span {
 /* Different images for different projects */
 
 .projectLink[data-project="001"]::after  {
-  background-image: url('/Images/Substack\ iOS\ 33.png');
+  background-image: url('/Project images/Chargebacks/cover.png');
 }
 
 .projectLink[data-project="002"]::after {
-  background-image: url('/pexels-alina-chernii-682289345-31414924.jpg');
+  background-image: url('/project images/KYC improvements/freepik__change-the-color-palette-of-the-image-to-a-more-vi__34089.png');
 }
 
 .projectLink[data-project="003"]::after {
